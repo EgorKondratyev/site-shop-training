@@ -1,0 +1,101 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+	<title>{{title}}</title>
+	<link type="text/css" href="{% static 'home/css/style.css' %}" rel="stylesheet" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<link rel="shortcut icon" href="{% static 'home/images/main.ico' %}" type="image/x-icon"/>
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+<table class="table-page" border=0 cellpadding="0" cellspacing="0">
+<tr><td valign=top>
+{% block mainmenu %}
+		<div class="header">
+			<ul id="mainmenu" class="mainmenu">
+			<li class="logo"><a href="{% url 'home' %}"><div class="logo"></div></a></li>
+				{% for m in menu %}
+				<li><a href="{% url m.url_name %}">{{ m.title }}</a></li>
+				{% endfor %}
+
+				{% if not request.user.is_authenticated %}
+					<li class="last"><a href="{% url 'login' %}">Войти</a> | <a href="{% url 'auth' %}">Зарегистрироваться</a></li>
+				{% else %}
+					<li class="last">{{ request.user.username }} | <a href="{% url 'logout' %}">Выйти</a></li>
+				{% endif %}
+			</ul>
+			<div class="clear"></div>
+		</div>
+{% endblock mainmenu %}
+
+<table class="table-content" border=0 cellpadding="0" cellspacing="0">
+<tr>
+<!-- Sidebar слева -->
+	<td valign="top" class="left-chapters">
+	<ul id="leftchapters">
+		{% for category in categories %}
+			<li>
+				<p><a href="{{ category.get_absolute_url }}">{{ category.title }}</a></p>
+			</li>
+		{% endfor %}
+		<li class="share">
+			{% if request.user.is_authenticated %}
+				<a href="{{ cart.get_absolute_url }}">Корзина</a>
+			{% endif %}
+		</li>
+	</ul>
+</td>
+<!-- Конец Sidebar'а -->
+<td valign="top" class="content">
+	<!-- Хлебные крошки -->
+	{% block breadcrumbs %}
+	{% endblock %}
+
+<!-- Блок контента -->
+	<div class="content-text">
+{% block content %}
+{% endblock %}
+		{% if page_obj.has_other_pages %}
+			<nav class="list-pages">
+				<ul>
+					{% if page_obj.number >= 4 %}
+						<li class="page-num"><a href="?page=1">1...</a></li>
+					{% endif %}
+
+					{% if page_obj.has_previous %}
+						<li class="page-num"><a href="?page={{ page_obj.previous_page_number }}">←</a></li>
+					{% endif %}
+
+					{% for number_page in paginator.page_range %}
+						{% if number_page == page_obj.number %}
+						<li class="page-num page-num-selected">{{ number_page }}</li>
+						{% elif number_page|add:2 >= page_obj.number and  number_page|add:-2 <= page_obj.number %}
+							<li class="page-num"><a href="?page={{ number_page }}">{{ number_page }}</a></li>
+						{% endif %}
+					{% endfor %}
+
+					{% if page_obj.has_next %}
+						<li class="page-num"><a href="?page={{ page_obj.next_page_number }}">→</a></li>
+					{% endif %}
+
+					{% if page_obj.number <= paginator.num_pages|add:-3 %}
+						<li class="page-num"><a href="?page={{ paginator.num_pages }}">...{{ paginator.num_pages }}</a></li>
+					{% endif %}
+				</ul>
+			</nav>
+		{% endif %}
+	</div>
+<!-- Конец блока контента -->
+
+</td></tr></table>
+</td></tr>
+<!-- Footer -->
+<tr><td valign=top>
+	<div id="footer">
+		<p>&copy; 2021 Частичное или полное копирование информации с данного сайта для распространения на других ресурсах, в том числе и бумажных, строго запрещено.</p>
+	</div>
+</td></tr></table>
+<!-- Конец footer'а и страницы -->
+</body>
+</html>

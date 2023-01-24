@@ -1,0 +1,21 @@
+{% extends 'home/base.html' %}
+
+{% block content %}
+<ul class="list-articles">
+    {% for product in products %}
+        <li>
+            <h2>{{ product.name }}</h2>
+
+            {% if product.photo %}
+                <p><img class="img-article-left thumb" src="{{ product.photo.photo.url }}"></p>
+            {% endif %}
+
+            {{ product.description| linebreaks | truncatewords:50 }}
+            <div class="clear"></div>
+            <p class="link-read-post"><a href="{{ product.get_absolute_url }}">Читать пост</a></p>
+        </li>
+    {% empty %}
+    {% endfor %}
+</ul>
+<h1>Общая стоимость товаров в корзине: {{ price.sum }} RUB</h1>
+{% endblock %}
