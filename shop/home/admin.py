@@ -5,6 +5,8 @@ from home.models import Product, ProductPhoto, Category
 class ProductAdmin(admin.ModelAdmin):
     prepopulated_fields = {'slug': ('name', )}
 
+    save_as = True
+
 
 admin.site.register(Product, ProductAdmin)
 admin.site.register(ProductPhoto)
