@@ -1,3 +1,4 @@
+/* block navbar */
 .navbar {
     background: #3F4137 !important;
     font-size: 1.25em;
@@ -15,7 +16,26 @@
     background: grey;
     color: #fdc073;
 }
+/* end block navbar */
 
+
+/* block sidebar */
+.nav-item .sidebar-link {
+    color: #444444 !important;
+    font-size: 1.25em;
+    height: 100%;
+}
+.sidebar-container {
+    background: #eee;
+}
+/* end block sidebar */
+
+
+/* block content */
+.card-img, .card-img-bottom, .card-img-top {
+    width: 50%;
+}
+/* end block content */
 
 
 html, body {
