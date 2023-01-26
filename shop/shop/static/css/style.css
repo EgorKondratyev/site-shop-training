@@ -33,7 +33,16 @@
 
 /* block content */
 .card-img, .card-img-bottom, .card-img-top {
-    width: 50%;
+    width: 100%;
+}
+.row {
+    --bs-gutter-x: 0rem;
+}
+.carousel-caption>h5 {
+    color: white;
+}
+.carousel-caption>p {
+    color: white;
 }
 /* end block content */
 
