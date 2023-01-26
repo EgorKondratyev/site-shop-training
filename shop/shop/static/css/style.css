@@ -1,3 +1,8 @@
+body {
+    font-family: Yandex Sans Display Light !important;
+}
+
+
 /* block navbar */
 .navbar {
     background: #3F4137 !important;
@@ -16,6 +21,11 @@
     background: grey;
     color: #fdc073;
 }
+.fixed-nav-bar {
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0;
+}
 /* end block navbar */
 
 
@@ -33,7 +43,7 @@
 
 /* block content */
 .card-img, .card-img-bottom, .card-img-top {
-    width: 100%;
+    width: 50%;
 }
 .row {
     --bs-gutter-x: 0rem;
