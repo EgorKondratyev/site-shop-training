@@ -43,7 +43,7 @@ body {
 
 /* block content */
 .card-img, .card-img-bottom, .card-img-top {
-    width: 50%;
+    width: 100%;
 }
 .row {
     --bs-gutter-x: 0rem;
@@ -51,6 +51,7 @@ body {
 /* end block content */
 
 
+/* block preloader */
 .preloader {
   /*фиксированное позиционирование*/
   position: fixed;
@@ -120,6 +121,7 @@ body {
 .loaded .preloader {
   display: none;
 }
+/* end block preloader */
 
 
 html, body {
