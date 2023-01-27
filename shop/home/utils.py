@@ -34,5 +34,8 @@ class DataMixin:
         if not context.get('title'):
             context['title'] = 'Страница'
 
+        if not context.get('category_selected'):
+            context['category_selected'] = 0
+
         context['categories'] = Category.objects.annotate(total=Count('product')).filter(total__gte=1)
         return context

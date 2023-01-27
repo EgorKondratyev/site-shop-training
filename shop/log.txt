@@ -206,3 +206,19 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 9: 'static'. Did you forget to register or load this tag?
 "GET / HTTP/1.1" 500 165041
+Internal Server Error: /category/kotiki/
+Traceback (most recent call last):
+  File "C:\django_projects\shop\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\django_projects\shop\venv\lib\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\django_projects\shop\venv\lib\site-packages\django\views\generic\base.py", line 103, in view
+    return self.dispatch(request, *args, **kwargs)
+  File "C:\django_projects\shop\venv\lib\site-packages\django\views\generic\base.py", line 142, in dispatch
+    return handler(request, *args, **kwargs)
+  File "C:\django_projects\shop\venv\lib\site-packages\django\views\generic\list.py", line 174, in get
+    context = self.get_context_data()
+  File "C:\django_projects\shop\shop\home\views.py", line 35, in get_context_data
+    print(context_base['products'][0].cat_id)
+AttributeError: 'Product' object has no attribute 'cat_id'
+"GET /category/kotiki/ HTTP/1.1" 500 79807

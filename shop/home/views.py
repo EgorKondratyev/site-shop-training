@@ -32,7 +32,7 @@ class ShowCategory(DataMixin, ListView):
 
     def get_context_data(self, *, object_list=None, **kwargs):
         context_base = super(ShowCategory, self).get_context_data()
-        context = self.user_context_data(**context_base)
+        context = self.user_context_data(**context_base, category_selected=context_base['products'][0].category_id)
         return context
 
     def get_queryset(self):
@@ -47,7 +47,7 @@ class ShowCart(DataMixin, ListView):
     def get_context_data(self, *, object_list=None, **kwargs):
         context_base = super(ShowCart, self).get_context_data()
         price = context_base['products'].aggregate(sum=Sum('price'))
-        context = self.user_context_data(**context_base, price=price)
+        context = self.user_context_data(**context_base, price=price, category_selected='cart')
         return context
 
     def get_queryset(self):
@@ -67,7 +67,8 @@ class ShowProduct(DataMixin, DetailView):
         if self.request.user.is_authenticated:
             check_product_in_cart_user = bool(self.request.user.cart.product.filter(name=context_base['product'].name))
         context = self.user_context_data(**context_base, title=context_base['product'].name,
-                                         check_product_in_cart_user=check_product_in_cart_user)
+                                         check_product_in_cart_user=check_product_in_cart_user,
+                                         category_selected=context_base['product'].category_id)
         return context
 
 
