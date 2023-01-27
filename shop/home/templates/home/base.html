@@ -46,7 +46,7 @@
 
 <!-- Header -->
 <header>
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
                 <img src="{% static 'images/logo.png' %}" alt="" width="30" height="24">
@@ -93,9 +93,9 @@
 
 <!-- Content -->
 <section>
-    <div class="row">
+    <div class="row content">
         <!-- Sidebar слева -->
-        <div class="col-lg-3 col-md-3 col-sm-3">
+        <div class="col-lg-3 col-md-3 col-sm-3 mt-4">
             <div class="d-flex flex-column flex-shrink-0 p-3 sidebar-container">
                 <a href="{% url 'home' %}"
                    class="d-flex align-items-center mb-3 mb-md-0 me-md-auto link-dark text-decoration-none">
@@ -327,6 +327,7 @@
         document.body.classList.remove('loaded_hiding');
         }, 500);
     }
+
 </script>
 </body>
 </html>
