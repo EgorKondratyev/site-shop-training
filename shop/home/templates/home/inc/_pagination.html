@@ -1,0 +1,37 @@
+{% if page_obj.has_other_pages %}
+<nav aria-label="Page navigation example">
+    <ul class="pagination justify-content-center">
+
+        {% if page_obj.number >= 4 %}
+        <li class="page-num"><a href="?page=1">1...</a></li>
+        {% endif %}
+
+        {% if page_obj.has_previous %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.previous_page_number }}" tabindex="-1"
+               aria-disabled="true">←</a>
+        </li>
+        {% endif %}
+
+        {% for number_page in paginator.page_range %}
+        {% if number_page == page_obj.number %}
+        <li class="page-item active"><a class="page-link" href="#">{{ number_page }}</a></li>
+        {% elif number_page|add:2 >= page_obj.number and number_page|add:-2 <= page_obj.number %}
+        <li class="page-item"><a class="page-link" href="?page={{ number_page }}">{{ number_page }}</a></li>
+        {% endif %}
+        {% endfor %}
+
+        {% if page_obj.has_next %}
+        <li class="page-item">
+            <a class="page-link" href="?page={{ page_obj.next_page_number }}">→</a>
+        </li>
+        {% endif %}
+
+        {% if page_obj.number <= paginator.num_pages|add:-3 %}
+        <li class="page-num"><a href="?page={{ paginator.num_pages }}">...{{ paginator.num_pages }}</a>
+        </li>
+        {% endif %}
+
+    </ul>
+</nav>
+{% endif %}
