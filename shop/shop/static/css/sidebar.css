@@ -477,9 +477,7 @@ pre {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-  flex-wrap: wrap;
-  margin-right: -15px;
-  margin-left: -15px; }
+  flex-wrap: wrap; }
 
 .no-gutters {
   margin-right: 0;
@@ -496,9 +494,7 @@ pre {
 .col-lg-auto, .col-xl-1, .col-xl-2, .col-xl-3, .col-xl-4, .col-xl-5, .col-xl-6, .col-xl-7, .col-xl-8, .col-xl-9, .col-xl-10, .col-xl-11, .col-xl-12, .col-xl,
 .col-xl-auto {
   position: relative;
-  width: 100%;
-  padding-right: 15px;
-  padding-left: 15px; }
+  width: 100%; }
 
 .col {
   -ms-flex-preferred-size: 0;
@@ -836,6 +832,7 @@ pre {
   .offset-sm-2 {
     margin-left: 16.66667%; }
   .offset-sm-3 {
+    padding: 0px;
     margin-left: 25%; }
   .offset-sm-4 {
     margin-left: 33.33333%; }
@@ -879,6 +876,7 @@ pre {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
   .col-md-3 {
+    padding: 0px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
@@ -995,6 +993,7 @@ pre {
   .offset-md-2 {
     margin-left: 16.66667%; }
   .offset-md-3 {
+    padding: 0px;
     margin-left: 25%; }
   .offset-md-4 {
     margin-left: 33.33333%; }
@@ -1038,6 +1037,7 @@ pre {
     flex: 0 0 16.66667%;
     max-width: 16.66667%; }
   .col-lg-3 {
+    padding: 0px;
     -webkit-box-flex: 0;
     -ms-flex: 0 0 25%;
     flex: 0 0 25%;
@@ -8192,9 +8192,8 @@ h1, h2, h3, h4, h5,
   width: 100%; }
 
 #sidebar {
-  min-width: 270px;
-  max-width: 270px;
-  background: #3445b4;
+  width: 100%;
+  background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
   color: #fff;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
@@ -8209,10 +8208,10 @@ h1, h2, h3, h4, h5,
     font-weight: 700;
     font-size: 30px; }
     #sidebar h1 .logo {
-      color: #fff; }
+      color: lightblue; }
       #sidebar h1 .logo span {
         font-size: 14px;
-        color: #44bef1;
+        color: lightblue;
         display: block; }
   #sidebar ul.components {
     padding: 0; }
@@ -8228,16 +8227,17 @@ h1, h2, h3, h4, h5,
       color: rgba(255, 255, 255, 0.6);
       border-bottom: 1px solid rgba(255, 255, 255, 0.1); }
       #sidebar ul li a span {
-        color: #44bef1; }
+        color: lightblue; }
       #sidebar ul li a:hover {
-        color: #fff; }
+        color: white; }
     #sidebar ul li.active > a {
       background: transparent;
-      color: #fff; }
+      color: white; }
   @media (max-width: 991.98px) {
     #sidebar {
       margin-left: -270px; }
       #sidebar.active {
+        min-width: 150px;
         margin-left: 0; } }
   #sidebar .custom-menu {
     display: inline-block;

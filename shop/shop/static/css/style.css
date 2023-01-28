@@ -1,10 +1,15 @@
+* {
+    margin: 0;
+    padding: 0;
+}
 body {
     font-family: Yandex Sans Display Light !important;
 }
 /* block navbar */
 .navbar {
     font-size: 1.25em;
-    background-color: #0d6efd;
+    background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
+    /*background-color: #0d6efd;*/
     color: white;
 }
 .navbar-expand-lg .navbar-nav .nav-link {
@@ -41,11 +46,14 @@ body {
 
 
 /* block content */
+.row {
+    --bs-gutter-x: 0;
+}
 .card-img, .card-img-bottom, .card-img-top {
     width: 100%;
 }
-.row.content {
-    margin-top: 1.5em;
+.content {
+    margin-top: 5.4em;
 }
 /* end block content */
 

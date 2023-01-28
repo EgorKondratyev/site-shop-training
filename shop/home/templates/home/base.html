@@ -58,11 +58,11 @@
 
 
 <!-- Header -->
-<!--<header>
+<header>
     <nav class="navbar navbar-expand-lg bg-body-tertiary fixed-top">
         <div class="container-fluid">
             <a class="navbar-brand" href="{% url 'home' %}">
-                <img src="{% static 'images/logo.png' %}" alt="" width="30" height="24">
+                <img src="{% static 'images/logo.png' %}" alt="logo">
             </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
                     data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
@@ -78,8 +78,7 @@
                     {% endfor %}
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
-                           data-bs-toggle="dropdown" aria-expanded="false">
-                            Dropdown
+                           data-bs-toggle="dropdown" aria-expanded="false">Dropdown
                         </a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
                             <li><a class="dropdown-item" href="#">Action</a></li>
@@ -100,16 +99,16 @@
             </div>
         </div>
     </nav>
-</header>-->
+</header>
 <!-- End Header -->
 
 
 <!-- Content -->
-<section>
+<section class="content">
     <div class="wrapper d-flex align-items-stretch">
         <div class="row">
             <!-- Left Sidebar -->
-            <div class="col-lg-3 col-md-3 col-sm-3">
+            <div class="col-lg-3 col-md-3 col-sm-3 pr-3">
                 <nav id="sidebar">
                     <div class="custom-menu">
                         <button type="button" id="sidebarCollapse" class="btn btn-primary">
@@ -188,8 +187,6 @@
             {% include './inc/_pagination.html' %}
             <!-- End Pagination -->
         </div>
-        <!-- Page Content  -->
-
     </div>
 </section>
 <!-- End Content -->
