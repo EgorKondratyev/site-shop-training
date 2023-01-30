@@ -28,13 +28,20 @@
 
 
 <!-- Preloader -->
-<div class="preloader">
+<div id="preloader">
+    <div class="line"></div>
+</div>
+<!-- End Preloader -->
+
+
+<!-- Old Preloader -->
+<!--<div class="preloader">
     <div class="preloader__row">
         <div class="preloader__item"></div>
         <div class="preloader__item"></div>
     </div>
-</div>
-<!-- End Preloader -->
+</div>-->
+<!-- End Old Preloader -->
 
 
 <!-- Elements For Footer -->
@@ -298,16 +305,11 @@
         document.body.classList.remove('loaded_hiding');
         }, 500);
     }
-
-
-
-
-
-
 </script>
 <script src="{% static 'js/jquery.min.js' %}"></script>
 <script src="{% static 'js/popper.js' %}"></script>
 <script src="{% static 'js/bootstrap.min.js' %}"></script>
 <script src="{% static 'js/main.js' %}"></script>
+<script src="{% static 'js/preloader.js' %}"></script>
 </body>
 </html>
