@@ -8222,6 +8222,7 @@ h1, h2, h3, h4, h5,
       #sidebar ul li > ul li {
         font-size: 14px; }
     #sidebar ul li a {
+      font-size: 1.25em;
       padding: 10px 0;
       display: block;
       color: rgba(255, 255, 255, 0.6);
@@ -8288,7 +8289,7 @@ a[data-toggle="collapse"] {
   display: block;
   position: absolute;
   top: 50%;
-  right: 0;
+  right: -6px;
   -webkit-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   transform: translateY(-50%); }
