@@ -8208,6 +8208,7 @@ h1, h2, h3, h4, h5,
     font-weight: 700;
     font-size: 30px; }
     #sidebar h1 .logo {
+      text-decoration: none;
       color: lightblue; }
       #sidebar h1 .logo span {
         font-size: 14px;
@@ -8222,6 +8223,7 @@ h1, h2, h3, h4, h5,
       #sidebar ul li > ul li {
         font-size: 14px; }
     #sidebar ul li a {
+      text-decoration: none;
       font-size: 1.25em;
       padding: 10px 0;
       display: block;
