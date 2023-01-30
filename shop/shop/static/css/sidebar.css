@@ -8278,7 +8278,7 @@ h1, h2, h3, h4, h5,
           -webkit-transform: rotate(45deg);
           -ms-transform: rotate(45deg);
           transform: rotate(45deg);
-          background: #3445b4;
+          background-color: #0d6efd;
           border-radius: 10px; }
         #sidebar .custom-menu .btn.btn-primary:hover, #sidebar .custom-menu .btn.btn-primary:focus {
           background: transparent !important;
@@ -8307,13 +8307,6 @@ a[data-toggle="collapse"] {
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s; }
-
-.btn.btn-primary {
-  background: #3445b4;
-  border-color: #3445b4; }
-  .btn.btn-primary:hover, .btn.btn-primary:focus {
-    background: #3445b4 !important;
-    border-color: #3445b4 !important; }
 
 .footer p {
   color: rgba(255, 255, 255, 0.5); }
