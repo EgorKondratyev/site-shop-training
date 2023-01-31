@@ -3595,8 +3595,7 @@ input[type="button"].btn-block {
 @media (max-width: 991.98px) {
   .navbar-expand-lg > .container,
   .navbar-expand-lg > .container-fluid {
-    padding-right: 0;
-    padding-left: 0; } }
+    padding: 10px; } }
 
 @media (min-width: 992px) {
   .navbar-expand-lg {
@@ -8192,6 +8191,8 @@ h1, h2, h3, h4, h5,
   width: 100%; }
 
 #sidebar {
+  min-width: 365px;
+  max-width: 365px;
   width: 100%;
   background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
   color: #fff;
@@ -8202,7 +8203,7 @@ h1, h2, h3, h4, h5,
   #sidebar .h6 {
     color: #fff; }
   #sidebar.active {
-    margin-left: -270px; }
+    margin-left: -365px; }
   #sidebar h1 {
     margin-bottom: 20px;
     font-weight: 700;
