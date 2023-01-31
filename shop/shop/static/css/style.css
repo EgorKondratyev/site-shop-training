@@ -279,3 +279,7 @@ body {
     width: 0%;
   }
 }
+
+.form-container {
+    text-align: center;
+}

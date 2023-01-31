@@ -8192,7 +8192,6 @@ h1, h2, h3, h4, h5,
 
 #sidebar {
   min-width: 365px;
-  max-width: 365px;
   width: 100%;
   background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
   color: #fff;
@@ -8303,7 +8302,7 @@ a[data-toggle="collapse"] {
 
 #content {
   width: 100%;
-  padding: 0;
+  padding: 2em;
   min-height: 100vh;
   -webkit-transition: all 0.3s;
   -o-transition: all 0.3s;

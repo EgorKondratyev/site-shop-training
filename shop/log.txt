@@ -200,3 +200,207 @@ Traceback (most recent call last):
     raise self.error(
 django.template.exceptions.TemplateSyntaxError: Invalid block tag on line 80: 'else', expected 'empty' or 'endfor'. Did you forget to register or load this tag?
 "GET / HTTP/1.1" 500 234287
+Internal Server Error: /add_product_photo/
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\engine.py", line 161, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 64, in render
+    reraise(exc, self.backend)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 85, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+Internal Server Error: /add_product_photo/
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\engine.py", line 161, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 64, in render
+    reraise(exc, self.backend)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 85, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+"GET /add_product_photo/ HTTP/1.1" 500 136472
+Internal Server Error: /add_product_photo/
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\engine.py", line 161, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 64, in render
+    reraise(exc, self.backend)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 85, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+"GET /add_product_photo/ HTTP/1.1" 500 136472
+Internal Server Error: /add_product_photo/
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\engine.py", line 161, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 64, in render
+    reraise(exc, self.backend)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 85, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+"GET /add_product_photo/ HTTP/1.1" 500 136472
+Internal Server Error: /add_product_photo/
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 62, in render
+    return self.template.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 175, in render
+    return self._render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 167, in _render
+    return self.nodelist.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in render
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 1005, in <listcomp>
+    return SafeString("".join([node.render_annotated(context) for node in self]))
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\base.py", line 966, in render_annotated
+    return self.render(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 132, in render
+    compiled_parent = self.get_parent(context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 129, in get_parent
+    return self.find_template(parent, context)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\loader_tags.py", line 107, in find_template
+    template, origin = context.template.engine.find_template(
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\engine.py", line 161, in find_template
+    raise TemplateDoesNotExist(name, tried=tried)
+django.template.exceptions.TemplateDoesNotExist: base.html
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\core\handlers\base.py", line 220, in _get_response
+    response = response.render()
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 114, in render
+    self.content = self.rendered_content
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\response.py", line 92, in rendered_content
+    return template.render(context, self._request)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 64, in render
+    reraise(exc, self.backend)
+  File "D:\Django_Egor\django_egor\venv\lib\site-packages\django\template\backends\django.py", line 85, in reraise
+    raise new from exc
+django.template.exceptions.TemplateDoesNotExist: base.html
+"GET /add_product_photo/ HTTP/1.1" 500 136472
