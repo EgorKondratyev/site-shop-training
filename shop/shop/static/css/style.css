@@ -1,288 +1,205 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-*{
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Poppins', sans-serif;
-}
-body {
-    font-family: Yandex Sans Display Light;
-}
-/* block navbar */
-.navbar {
-    font-size: 1.25em;
-    background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
-    /*background-color: #0d6efd;*/
-    color: white;
-}
-.navbar-expand-lg .navbar-nav .nav-link {
-    color: white;
-    text-decoration: none;
-}
-.navbar-expand-lg .navbar-nav .dropdown-menu {
-    background-color: #0d6efd;
-}
-.dropdown-item {
-    color: white;
-}
-.dropdown-item:hover {
-    background-color: white;
-    color: #0d6efd;
-    text-decoration: none;
-}
-/* end block navbar */
 
+* {
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
 
-/* block sidebar */
-.nav-item .sidebar-link {
-    color: #444444 !important;
-    font-size: 1.25em;
-    height: 100%;
+/* Header */
+.main-header {
+	display: flex;
+	justify-content: space-between;
+	background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
+}
+.header {
+	display: flex;
+	list-style-type: none;
+}
+.nav-item {
+	
+}
+.logo {
+	display: block;
+	padding: 0.5em;
+}
+.nav-link {
+	display: block;
+	padding: 1em;
+	font-size: 1.25em;
+	color: white;
+	text-decoration: none;
+}
+.nav-item:hover {
+	background: #0d6efd;
+}
+/* End Header */
+
+/* Grid */
+.content-container {
+	display: grid;
+	grid-template-columns: repeat(12, 1fr);
 }
 .sidebar-container {
-    background: #eee;
+	grid-column: 1/4;
 }
-.h5, h5 {
-    font-size: 1.5rem;
+.content-container {
+	grid-column: 4/13;
 }
-/* end block sidebar */
+/* End Grid */
 
 
-/* block content */
-.row {
-    --bs-gutter-x: 0;
-}
-.card-img, .card-img-bottom, .card-img-top {
-    width: 100%;
-}
-.content {
-    margin-top: 4.7em;
-}
-/* end block content */
 
 
-/* Old Preloader */
-/* block preloader */
-/*.preloader {
-  *//*фиксированное позиционирование*//*
-  position: fixed;
-  *//* координаты положения *//*
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  *//* фоновый цвет элемента *//*
-  background: #e0e0e0;
-  *//* размещаем блок над всеми элементами на странице (это значение должно быть больше, чем у любого другого позиционированного элемента на странице) *//*
-  z-index: 1001;
-}
-
-.preloader__row {
-  position: relative;
-  top: 50%;
-  left: 50%;
-  width: 70px;
-  height: 70px;
-  margin-top: -35px;
-  margin-left: -35px;
-  text-align: center;
-  animation: preloader-rotate 2s infinite linear;
-}
-
-.preloader__item {
-  position: absolute;
-  display: inline-block;
-  top: 0;
-  background-color: #337ab7;
-  border-radius: 100%;
-  width: 35px;
-  height: 35px;
-  animation: preloader-bounce 2s infinite ease-in-out;
-}
-
-.preloader__item:last-child {
-  top: auto;
-  bottom: 0;
-  animation-delay: -1s;
-}
-
-@keyframes preloader-rotate {
-  100% {
-    transform: rotate(360deg);
-  }
-}
-
-@keyframes preloader-bounce {
-
-  0%,
-  100% {
-    transform: scale(0);
-  }
-
-  50% {
-    transform: scale(1);
-  }
-}
-
-.loaded_hiding .preloader {
-  transition: 0.3s opacity;
-  opacity: 0;
-}
-
-.loaded .preloader {
-  display: none;
-}*/
-/* end block preloader */
-
-
-/*--------------------------------------------------------------
-# Preloader
---------------------------------------------------------------*/
+/* Preloader */
 /* Colors */
 :root {
-  --color-default: #fafafa;
-  --color-primary: #27a776;
-  --color-secondary: #0d6efd;
+	--color-default: #fafafa;
+	--color-primary: #27a776;
+	--color-secondary: #0d6efd;
 }
+
 /* End Colors */
 #preloader {
-  display: flex;
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100vh;
-  z-index: 99999;
+	display: flex;
+	position: fixed;
+	inset: 0;
+	width: 100%;
+	height: 100vh;
+	z-index: 99999;
 }
 
 #preloader:before,
 #preloader:after {
-  content: "";
-  background-color: var(--color-secondary);
-  position: absolute;
-  inset: 0;
-  width: 50%;
-  height: 100%;
-  transition: all 0.3s ease 0s;
-  z-index: -1;
+	content: "";
+	background-color: var(--color-secondary);
+	position: absolute;
+	inset: 0;
+	width: 50%;
+	height: 100%;
+	transition: all 0.3s ease 0s;
+	z-index: -1;
 }
 
 #preloader:after {
-  left: auto;
-  right: 0;
+	left: auto;
+	right: 0;
 }
 
 #preloader .line {
-  position: relative;
-  overflow: hidden;
-  margin: auto;
-  width: 1px;
-  height: 280px;
-  transition: all 0.8s ease 0s;
+	position: relative;
+	overflow: hidden;
+	margin: auto;
+	width: 1px;
+	height: 280px;
+	transition: all 0.8s ease 0s;
 }
 
 #preloader .line:before {
-  content: "";
-  position: absolute;
-  background-color: white;
-  left: 0;
-  top: 50%;
-  width: 1px;
-  height: 0%;
-  transform: translateY(-50%);
-  -webkit-animation: lineincrease 1000ms ease-in-out 0s forwards;
-  animation: lineincrease 1000ms ease-in-out 0s forwards;
+	content: "";
+	position: absolute;
+	background-color: white;
+	left: 0;
+	top: 50%;
+	width: 1px;
+	height: 0%;
+	transform: translateY(-50%);
+	-webkit-animation: lineincrease 1000ms ease-in-out 0s forwards;
+	animation: lineincrease 1000ms ease-in-out 0s forwards;
 }
 
 #preloader .line:after {
-  content: "";
-  position: absolute;
-  background-color: #999;
-  left: 0;
-  top: 0;
-  width: 1px;
-  height: 100%;
-  transform: translateY(-100%);
-  -webkit-animation: linemove 1200ms linear 0s infinite;
-  animation: linemove 1200ms linear 0s infinite;
-  -webkit-animation-delay: 2000ms;
-  animation-delay: 2000ms;
+	content: "";
+	position: absolute;
+	background-color: #999;
+	left: 0;
+	top: 0;
+	width: 1px;
+	height: 100%;
+	transform: translateY(-100%);
+	-webkit-animation: linemove 1200ms linear 0s infinite;
+	animation: linemove 1200ms linear 0s infinite;
+	-webkit-animation-delay: 2000ms;
+	animation-delay: 2000ms;
 }
 
 #preloader.loaded .line {
-  opacity: 0;
-  height: 100% !important;
+	opacity: 0;
+	height: 100% !important;
 }
 
 #preloader.loaded .line:after {
-  opacity: 0;
+	opacity: 0;
 }
 
 #preloader.loaded:before,
 #preloader.loaded:after {
-  -webkit-animation: preloaderfinish 300ms ease-in-out 500ms forwards;
-  animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+	-webkit-animation: preloaderfinish 300ms ease-in-out 500ms forwards;
+	animation: preloaderfinish 300ms ease-in-out 500ms forwards;
 }
 
 @-webkit-keyframes lineincrease {
-  0% {
-    height: 0%;
-  }
+	0% {
+		height: 0%;
+	}
 
-  100% {
-    height: 100%;
-  }
+	100% {
+		height: 100%;
+	}
 }
 
 @keyframes lineincrease {
-  0% {
-    height: 0%;
-  }
+	0% {
+		height: 0%;
+	}
 
-  100% {
-    height: 100%;
-  }
+	100% {
+		height: 100%;
+	}
 }
 
 @-webkit-keyframes linemove {
-  0% {
-    transform: translateY(200%);
-  }
+	0% {
+		transform: translateY(200%);
+	}
 
-  100% {
-    transform: translateY(-100%);
-  }
+	100% {
+		transform: translateY(-100%);
+	}
 }
 
 @keyframes linemove {
-  0% {
-    transform: translateY(200%);
-  }
+	0% {
+		transform: translateY(200%);
+	}
 
-  100% {
-    transform: translateY(-100%);
-  }
+	100% {
+		transform: translateY(-100%);
+	}
 }
 
 @-webkit-keyframes preloaderfinish {
-  0% {
-    width: 5 0%;
-  }
+	0% {
+		width: 5 0%;
+	}
 
-  100% {
-    width: 0%;
-  }
+	100% {
+		width: 0%;
+	}
 }
 
 @keyframes preloaderfinish {
-  0% {
-    width: 5 0%;
-  }
+	0% {
+		width: 5 0%;
+	}
 
-  100% {
-    width: 0%;
-  }
+	100% {
+		width: 0%;
+	}
 }
 
 .form-container {
-    text-align: center;
+	text-align: center;
 }
+
+/* End Preloader */
