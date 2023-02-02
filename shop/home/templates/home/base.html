@@ -98,50 +98,48 @@
         <!-- Left Sidebar -->
         <div class="sidebar-container">
             <ul>
-
-                <h2>Бокова панель</h1>
+                <h2 class="sidebar-title">Бокова панель</h2>
 
                     {% if category_selected == 0 %}
-                    <li class="active"><a href="{% url 'home' %}">Дом<span class="fa fa-home mr-3"></span>
+                    <li class="active"><a class="sidebar-link" href="{% url 'home' %}">Дом <span
+                                class="fa fa-home mr-3"></span>
                         </a></li>
                     {% else %}
-                    <li><a href="{% url 'home' %}">Дом<span class="fa fa-home mr-3"></span>
+                    <li><a class="sidebar-link" href="{% url 'home' %}">Дом <span class="fa fa-home mr-3"></span>
                         </a></li>
                     {% endif %}
 
-                    <li><a href="{% url 'about' %}">О нас<span class="fa fa-user mr-3"></span></a></li>
+                    <li><a class="sidebar-link" href="{% url 'about' %}">О нас <span class="fa fa-user mr-3"></span></a>
+                    </li>
 
-                    <li>Категории<span class="fa fa-suitcase mr-3 mt-3"></span></li>
-                    <label>Тип поездки</label>
-                    <select>
-                        {% for category in categories %}
-                        {% if category_selected == category.id %}
-                        <option class="active"><a href="{{ category.get_absolute_url }}">{{ category.title }}
-                                <span class="fa fa-sticky-note ml-4"></span></a></option>
-                        {% else %}
-                        <option><a href="{{ category.get_absolute_url }}">{{ category.title }}
-                                <span class="fa fa-sticky-note ml-4"></span></a></option>
-                        {% endif %}
-                        {% endfor %}
-                    </select>
+                    <h3 class="category">Категории <span class="fa fa-suitcase mr-3 mt-3"></span></h3>
 
-                    <li><a href="#">Сервисы<span class="fa fa-cogs mr-3"></span></a></li>
-                    <li><a href="#">Контакты<span class="fa fa-paper-plane mr-3"></span></a></li>
+                    {% for category in categories %}
+                    {% if category_selected == category.id %}
+                    <li class="active"><a class="sidebar-link" href="{{ category.get_absolute_url }}">{{ category.title }}
+                            <span class="fa fa-sticky-note ml-4"></span></a></li>
+                    {% else %}
+                    <li><a class="sidebar-link" href="{{ category.get_absolute_url }}">{{ category.title }}
+                            <span class="fa fa-sticky-note ml-4"></span></a></li>
+                    {% endif %}
+                    {% endfor %}
+
+
+                    <li><a class="sidebar-link" href="#">Сервисы <span class="fa fa-cogs mr-3"></span></a></li>
+                    <li><a class="sidebar-link" href="#">Контакты <span class="fa fa-paper-plane mr-3"></span></a></li>
 
                     <!--<li><a href="#"><span class="fa fa-briefcase mr-3"></span>Works</a></li>
                     <li><a href="#"><span class="fa fa-suitcase mr-3"></span>Gallery</a></li>-->
 
                     {% if request.user.is_authenticated %}
                     {% if category_selected == 'cart' %}
-                    <li class="active"><a href="{{ cart.get_absolute_url }}">Корзина<span
-                                class="fa fa-shopping-cart mr-3"></span>
-                        </a></li>
+                    <li class="active"><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина
+                            <span class="fa fa-shopping-cart mr-3"></span></a></li>
                     {% else %}
-                    <li><a href="{{ cart.get_absolute_url }}">Корзина<span class="fa fa-shopping-cart mr-3"></span>
-                        </a></li>
+                    <li><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина <span
+                                class="fa fa-shopping-cart mr-3"></span></a></li>
                     {% endif %}
                     {% endif %}
-
             </ul>
         </div>
         <!-- End Left Sidebar -->
