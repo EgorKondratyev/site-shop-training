@@ -17,7 +17,7 @@
 	list-style-type: none;
 }
 .nav-item {
-	
+	transition: 0.75s;
 }
 .logo {
 	display: block;
@@ -47,9 +47,6 @@
 	grid-column: 4/13;
 }
 /* End Grid */
-
-
-
 
 /* Preloader */
 /* Colors */

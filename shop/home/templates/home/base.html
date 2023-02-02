@@ -29,6 +29,8 @@
         <div class="line"></div>
     </div> -->
     <!-- End Preloader -->
+
+
     <!-- Header -->
     <div class="main-header">
 
@@ -87,93 +89,73 @@
         </div>
 
     </div>
-
-
     <!-- End Header -->
 
+
+    <!-- Content -->
     <div class="content-container">
 
         <!-- Left Sidebar -->
         <div class="sidebar-container">
-            <div class="col-lg-3 col-md-3 col-12 pr-3">
-                <nav id="sidebar">
-                    <div class="custom-menu">
-                        <button type="button" id="sidebarCollapse" class="btn btn-primary">
-                            <i class="fa fa-bars"></i>
-                            <span class="sr-only">Toggle Menu</span>
-                        </button>
-                    </div>
-                    <div class="p-4">
-                        <h1><a href="index.html" class="logo">Панель<span>Vladislav Agency</span></a></h1>
-                        <ul class="list-unstyled components mb-5">
-                            {% if category_selected == 0 %}
-                            <li class="active"><a href="{% url 'home' %}"><span class="fa fa-home mr-3"></span>Дом
-                                </a></li>
-                            {% else %}
-                            <li><a href="{% url 'home' %}"><span class="fa fa-home mr-3"></span>Дом
-                                </a></li>
-                            {% endif %}
-                            <li><a href="{% url 'about' %}"><span class="fa fa-user mr-3"></span>О нас</a></li>
+            <ul>
 
+                <h2>Бокова панель</h1>
 
-                            <li><a><span class="fa fa-suitcase mr-3 mt-3"></span>Категории</a></li>
-                            {% for category in categories %}
-                            {% if category_selected == category.id %}
-                            <li class="active"><a href="{{ category.get_absolute_url }}"><span
-                                        class="fa fa-sticky-note ml-4"></span>
-                                    {{ category.title }}</a></li>
-                            {% else %}
-                            <li><a href="{{ category.get_absolute_url }}"><span class="fa fa-sticky-note ml-4"></span>
-                                    {{ category.title }}</a></li>
-                            {% endif %}
-                            {% endfor %}
+                    {% if category_selected == 0 %}
+                    <li class="active"><a href="{% url 'home' %}">Дом<span class="fa fa-home mr-3"></span>
+                        </a></li>
+                    {% else %}
+                    <li><a href="{% url 'home' %}">Дом<span class="fa fa-home mr-3"></span>
+                        </a></li>
+                    {% endif %}
 
+                    <li><a href="{% url 'about' %}">О нас<span class="fa fa-user mr-3"></span></a></li>
 
-                            <li><a href="#"><span class="fa fa-cogs mr-3"></span>Сервисы</a></li>
-                            <li><a href="#"><span class="fa fa-paper-plane mr-3"></span>Контакты</a></li>
+                    <li>Категории<span class="fa fa-suitcase mr-3 mt-3"></span></li>
+                    <label>Тип поездки</label>
+                    <select>
+                        {% for category in categories %}
+                        {% if category_selected == category.id %}
+                        <option class="active"><a href="{{ category.get_absolute_url }}">{{ category.title }}
+                                <span class="fa fa-sticky-note ml-4"></span></a></option>
+                        {% else %}
+                        <option><a href="{{ category.get_absolute_url }}">{{ category.title }}
+                                <span class="fa fa-sticky-note ml-4"></span></a></option>
+                        {% endif %}
+                        {% endfor %}
+                    </select>
 
-                            <!--<li><a href="#"><span class="fa fa-briefcase mr-3"></span>Works</a></li>
-                <li><a href="#"><span class="fa fa-suitcase mr-3"></span>Gallery</a></li>-->
-                            {% if request.user.is_authenticated %}
-                            {% if category_selected == 'cart' %}
-                            <li class="active"><a href="{{ cart.get_absolute_url }}"><span
-                                        class="fa fa-shopping-cart mr-3"></span>Корзина
-                                </a></li>
-                            {% else %}
-                            <li><a href="{{ cart.get_absolute_url }}"><span
-                                        class="fa fa-shopping-cart mr-3"></span>Корзина
-                                </a></li>
-                            {% endif %}
-                            {% endif %}
-                        </ul>
+                    <li><a href="#">Сервисы<span class="fa fa-cogs mr-3"></span></a></li>
+                    <li><a href="#">Контакты<span class="fa fa-paper-plane mr-3"></span></a></li>
 
-                        <div class="footer">
-                            <p>&copy; 2023 Частичное или полное копирование информации с данного сайта для
-                                распространения на других
-                                ресурсах, в том числе и бумажных, строго запрещено.</p>
-                        </div>
+                    <!--<li><a href="#"><span class="fa fa-briefcase mr-3"></span>Works</a></li>
+                    <li><a href="#"><span class="fa fa-suitcase mr-3"></span>Gallery</a></li>-->
 
-                    </div>
-                </nav>
-            </div>
+                    {% if request.user.is_authenticated %}
+                    {% if category_selected == 'cart' %}
+                    <li class="active"><a href="{{ cart.get_absolute_url }}">Корзина<span
+                                class="fa fa-shopping-cart mr-3"></span>
+                        </a></li>
+                    {% else %}
+                    <li><a href="{{ cart.get_absolute_url }}">Корзина<span class="fa fa-shopping-cart mr-3"></span>
+                        </a></li>
+                    {% endif %}
+                    {% endif %}
+
+            </ul>
         </div>
-
         <!-- End Left Sidebar -->
 
 
-        <!-- Content Block -->
+        <!-- Product Block -->
         <div class="content-container">
-            <div class="col-lg-9 col-md-9 col-9">
-                <div id="content" class="">
-                    <div class="row">
-                        {% block content %} {% endblock %}
-                    </div>
-                </div>
-            </div>
+            {% block content %} {% endblock %}
         </div>
-        <!-- End Content Block -->
+        <!-- End Product Block -->
 
     </div>
+    <!-- End Content -->
+
 
     <!-- Pagination -->
     {% include './inc/_pagination.html' %}
