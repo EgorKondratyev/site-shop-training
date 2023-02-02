@@ -98,7 +98,7 @@
         <!-- Left Sidebar -->
         <div class="sidebar-container">
             <ul>
-                <h2 class="sidebar-title">Бокова панель</h2>
+                <h3 class="sidebar-title">Боковая панель</h3>
 
                 {% if category_selected == 0 %}
                 <li class="active"><a class="sidebar-link" href="{% url 'home' %}">Дом <span class="fa fa-home"></span>
@@ -113,7 +113,7 @@
                 <li><a class="sidebar-link" href="#">Сервисы <span class="fa fa-cogs"></span></a></li>
                 <li><a class="sidebar-link" href="#">Контакты <span class="fa fa-paper-plane"></span></a></li>
 
-                <h4 class="block">Категории <span class="fa fa-suitcase"></span></h4>
+                <h4 class="sidebar-block">Категории <span class="fa fa-suitcase"></span></h4>
 
                 {% for category in categories %}
                 {% if category_selected == category.id %}
@@ -128,7 +128,7 @@
                 <!-- <li><a href="#"><span class="fa fa-briefcase"></span>Works</a></li>
                 <li><a href="#"><span class="fa fa-suitcase"></span>Gallery</a></li> -->
 
-                <h4 class="block">Покупки <span class="fa fa-truck"></span></h4>
+                <h4 class="sidebar-block">Покупки <span class="fa fa-truck"></span></h4>
 
                 {% if request.user.is_authenticated %}
                 {% if category_selected == 'cart' %}
@@ -148,10 +148,12 @@
 
         <!-- Product Block -->
         <div class="content-container">
-            {% block content %} {% endblock %}
+            <div class="card-container">
+                {% block content %}{% endblock %}
+            </div>
         </div>
         <!-- End Product Block -->
-
+        
     </div>
     <!-- End Content -->
 

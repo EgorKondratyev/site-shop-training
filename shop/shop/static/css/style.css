@@ -58,7 +58,7 @@
 	padding: 0.5em;
 	text-align: center;
 }
-.block {
+.sidebar-block {
 	padding: 0.5em 0 0.5em 0;
 	text-align: center;
 }
@@ -74,6 +74,32 @@
 	background: #0d6efd;
 }
 /* End Sidebar */
+
+/* Card */
+.card-container {
+	display: grid;
+	grid-column: 1/13;
+	grid-template-columns: repeat(3, 1fr);
+}
+.card {
+	margin: 1em 1em 0 1em;
+	border: solid 0.1px rgb(200, 200, 200);
+}
+.card-img {
+	width: 100%;
+	border-bottom: solid 0.1px rgb(200, 200, 200);
+}
+.card-title {
+	text-align: center;
+	padding: 1em 1em 0 1em;
+}
+.card-text {
+	padding: 1.5em;
+}
+.read-more {
+
+}
+/* End Card */
 
 /* Preloader */
 /* Colors */
