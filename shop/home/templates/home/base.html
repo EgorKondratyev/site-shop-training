@@ -141,6 +141,8 @@
                 {% else %}
                 <li><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина <span
                             class="fa fa-shopping-cart"></span></a></li>
+                <li><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Магазин <span
+                            class="fa fa-shopping-basket"></span></a></li>
                 {% endif %}
                 {% endif %}
             </ul>
@@ -161,7 +163,10 @@
 
 
     <!-- Pagination -->
-    {% include './inc/_pagination.html' %}
+    <div class="main-pagination">
+        {% include './inc/_pagination.html' %}
+    </div>
+    
     <!-- End Pagination -->
 
 

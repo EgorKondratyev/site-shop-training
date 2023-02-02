@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 
+
 * {
 	margin: 0;
 	padding: 0;
 	font-family: 'Poppins', sans-serif;
 }
+
 
 /* Header */
 .main-header {
@@ -36,6 +38,7 @@
 }
 /* End Header */
 
+
 /* Grid */
 .content-container {
 	display: grid;
@@ -48,6 +51,7 @@
 	grid-column: 3/13;
 }
 /* End Grid */
+
 
 /* Sidebar */
 .sidebar-container {
@@ -81,6 +85,7 @@
 	border-radius: 45px;
 }
 /* End Sidebar */
+
 
 /* Card */
 .card-container {
@@ -122,10 +127,38 @@
 	transition: 1.5s;
 }
 .read-more:hover {
-	background: #0d6efd;
 	border-radius: 45px;
 }
 /* End Card */
+
+
+/* Pagination */
+.main-pagination {
+	display: flex;
+	justify-content: center;
+	margin: 2em;
+}
+.pagination {
+	display: flex;
+	list-style-type: none;
+}
+.page-link {
+	background: #0d6efd;
+	border: solid 0.1px rgb(200, 200, 200);
+	border-radius: 90px;
+	padding: 0.75em 1.1em 0.75em 1.1em;
+	margin: 0.5em;
+	text-decoration: none;
+	color: white;
+	transition: 0.75s;
+}
+.page-link:hover {
+	background: white;
+	color: #0d6efd;
+	text-decoration: underline;
+}
+/* End Pagination */
+
 
 /* Preloader */
 /* Colors */
