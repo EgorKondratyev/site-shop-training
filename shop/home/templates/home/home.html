@@ -3,6 +3,7 @@
 {% block content %}
 {% for product in products %}
 <div class="card">
+    
     {% if product.photo %}
     <div class="card-img-container">
         <img class="card-img" src="{{ product.photo.photo.url }}" alt="card-img">
@@ -17,11 +18,7 @@
         <div class="read-more-container">
             <a class="read-more" href="{{ product.get_absolute_url }}">Читать весь Пост</a>
         </div>
-        
-        
     </div>
-
-
 
 </div>
 {% empty %}

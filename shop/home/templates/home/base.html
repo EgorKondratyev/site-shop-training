@@ -101,7 +101,8 @@
                 <h3 class="sidebar-title">Боковая панель</h3>
 
                 {% if category_selected == 0 %}
-                <li class="active"><a class="sidebar-link" href="{% url 'home' %}">Дом <span class="fa fa-home"></span>
+                <li class="sidebar-active"><a class="sidebar-link" href="{% url 'home' %}">Дом <span
+                            class="fa fa-home"></span>
                     </a></li>
                 {% else %}
                 <li><a class="sidebar-link" href="{% url 'home' %}">Дом <span class="fa fa-home"></span>
@@ -117,7 +118,8 @@
 
                 {% for category in categories %}
                 {% if category_selected == category.id %}
-                <li class="active"><a class="sidebar-link" href="{{ category.get_absolute_url }}">{{ category.title }}
+                <li class="sidebar-active"><a class="sidebar-link" href="{{ category.get_absolute_url }}">{{
+                        category.title }}
                         <span class="fa fa-sticky-note ml-4"></span></a></li>
                 {% else %}
                 <li><a class="sidebar-link" href="{{ category.get_absolute_url }}">{{ category.title }}
@@ -132,13 +134,13 @@
 
                 {% if request.user.is_authenticated %}
                 {% if category_selected == 'cart' %}
-                <li class="active"><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина
+                <li class="sidebar-active"><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина
                         <span class="fa fa-shopping-cart"></span></a></li>
+                <li><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Магазин <span
+                            class="fa fa-shopping-basket"></span></a></li>
                 {% else %}
                 <li><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина <span
                             class="fa fa-shopping-cart"></span></a></li>
-                <li><a class="sidebar-link" href="{{ cart.get_absolute_url }}">Магазин <span
-                            class="fa fa-shopping-basket"></span></a></li>
                 {% endif %}
                 {% endif %}
             </ul>
@@ -153,7 +155,7 @@
             </div>
         </div>
         <!-- End Product Block -->
-        
+
     </div>
     <!-- End Content -->
 
