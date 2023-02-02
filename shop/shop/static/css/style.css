@@ -41,10 +41,10 @@
 	grid-template-columns: repeat(12, 1fr);
 }
 .sidebar-container {
-	grid-column: 1/4;
+	grid-column: 1/3;
 }
 .content-container {
-	grid-column: 4/13;
+	grid-column: 3/13;
 }
 /* End Grid */
 
@@ -58,8 +58,8 @@
 	padding: 0.5em;
 	text-align: center;
 }
-.category {
-	padding: 0.5em;
+.block {
+	padding: 0.5em 0 0.5em 0;
 	text-align: center;
 }
 .sidebar-link {
