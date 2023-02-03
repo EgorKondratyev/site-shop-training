@@ -41,6 +41,7 @@
 	background: #0d6efd;
 	border-radius: 45px;
 }
+
 /* End Header */
 
 
@@ -57,6 +58,7 @@
 .content-container {
 	grid-column: 3/13;
 }
+
 /* End Grid */
 
 
@@ -96,6 +98,7 @@
 	background: #0d6efd;
 	border-radius: 45px;
 }
+
 /* End Sidebar */
 
 
@@ -113,16 +116,24 @@
 }
 
 .card:hover {
-	border-radius: 45px;
 	background: #bcd7ff;
+	border-radius: 45px;
+}
+
+.card:hover .card-img  {
+	width: 85%;
+	border-radius: 15px;
+	margin-top: 1em;
 }
 
 .card-img-container {
 	padding: 1em;
+	text-align: center;
 }
 
 .card-img {
 	width: 100%;
+	transition: 1s;
 }
 
 .card-title {
@@ -150,6 +161,7 @@
 .read-more:hover {
 	border-radius: 45px;
 }
+
 /* End Card */
 
 
@@ -190,6 +202,7 @@
 	background: white;
 	color: #0d6efd;
 }
+
 /* End Pagination */
 
 
@@ -249,6 +262,7 @@
 	background: white;
 	color: #0d6efd;
 }
+
 /* End Footer */
 
 
@@ -402,4 +416,5 @@
 .form-container {
 	text-align: center;
 }
+
 /* End Preloader */
