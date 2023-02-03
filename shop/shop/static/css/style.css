@@ -12,7 +12,7 @@
 .main-header {
 	display: flex;
 	justify-content: space-between;
-	background-color: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
+	background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
 	position: fixed;
     width: 100%;
 }
@@ -63,7 +63,7 @@
 
 /* Sidebar */
 .sidebar-container {
-	background-color: linear-gradient(90deg, #0d6efd 0%, #0000ff 100%);
+	background: linear-gradient(90deg, #0d6efd 0%, #0000ff 100%);
 	color: white;
 	font-size: 1.25em;
 	border-radius: 0px 0px 15px 0px;
