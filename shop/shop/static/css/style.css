@@ -12,7 +12,7 @@
 .main-header {
 	display: flex;
 	justify-content: space-between;
-	background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
+	background-color: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
 	position: fixed;
     width: 100%;
 }
@@ -37,7 +37,7 @@
 }
 
 .nav-link:hover {
-	background: #0d6efd;
+	background-color: #0d6efd;
 	border-radius: 45px;
 }
 
@@ -63,7 +63,7 @@
 
 /* Sidebar */
 .sidebar-container {
-	background: linear-gradient(90deg, #0d6efd 0%, #0000ff 100%);
+	background-color: linear-gradient(90deg, #0d6efd 0%, #0000ff 100%);
 	color: white;
 	font-size: 1.25em;
 	border-radius: 0px 0px 15px 0px;
@@ -95,12 +95,12 @@
 	padding-left: 2em;
 	color: white;
 	text-decoration: none;
-	background: #0d6efd;
+	background-color: #0d6efd;
 	border-radius: 45px;
 }
 
 .sidebar-link:hover {
-	background: #0d6efd;
+	background-color: #0d6efd;
 	border-radius: 45px;
 }
 
@@ -122,7 +122,7 @@
 }
 
 .card:hover {
-	background: #bcd7ff;
+	background-color: #bcd7ff;
 	border-radius: 45px;
 }
 
@@ -157,7 +157,7 @@
 }
 
 .read-more {
-	background: #0d6efd;
+	background-color: #0d6efd;
 	color: white;
 	text-decoration: none;
 	padding: 0.5em;
@@ -186,7 +186,7 @@
 .page-link {
 	display: inline-block;
 	text-align: center;
-	background: #0d6efd;
+	background-color: #0d6efd;
 	color: white;
 	border: solid 0.1px rgb(200, 200, 200);
 
@@ -200,12 +200,12 @@
 }
 
 .active {
-	background: white;
+	background-color: white;
 	color: #0d6efd;
 }
 
 .page-link:hover {
-	background: white;
+	background-color: white;
 	color: #0d6efd;
 }
 
@@ -214,7 +214,7 @@
 
 /* Footer */
 .main-footer-container {
-	background: #0d6efd;
+	background-color: #0d6efd;
 	color: white;
 	text-align: center;
 	font-size: 1.25em;
@@ -243,7 +243,7 @@
 }
 
 .footer-link:hover {
-	background: white;
+	background-color: white;
 	color: #0d6efd;
 	border-radius: 45px;
 }
@@ -251,7 +251,7 @@
 .footer-social-link {
 	display: inline-block;
 	text-align: center;
-	background: #0d6efd;
+	background-color: #0d6efd;
 	color: white;
 	border: solid 0.1px rgb(200, 200, 200);
 
@@ -265,7 +265,7 @@
 }
 
 .footer-social-link:hover {
-	background: white;
+	background-color: white;
 	color: #0d6efd;
 }
 
