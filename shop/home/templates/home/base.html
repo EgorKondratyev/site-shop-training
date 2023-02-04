@@ -25,9 +25,9 @@
 <body>
 
     <!-- Preloader -->
-    <div id="preloader">
+    <!-- <div id="preloader">
         <div class="line"></div>
-    </div>
+    </div> -->
     <!-- End Preloader -->
 
 
@@ -128,11 +128,7 @@
 
 
         <!-- Product Block -->
-        <div class="content-container">
-            <div class="card-container">
-                {% block content %}{% endblock %}
-            </div>
-        </div>
+        {% block content %}{% endblock %}
         <!-- End Product Block -->
 
     </div>
