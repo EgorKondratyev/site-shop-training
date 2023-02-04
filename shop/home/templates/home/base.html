@@ -17,7 +17,6 @@
 
     <!-- Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    
     {% block link %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
     <!-- End Link -->
 
@@ -42,16 +41,16 @@
             {% for m in menu %}
             {% if m.title == 'Домашняя страница' %}
             <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-home" aria-hidden="true"></i></a>
+                {{ m.title }} <i class="fa fa-home"></i></a>
             {% elif m.title == 'О сайте' %}
             <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-search" aria-hidden="true"></i></a>
+                {{ m.title }} <i class="fa fa-search"></i></a>
             {% elif m.title == 'Добавить товар' %}
             <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-dropbox" aria-hidden="true"></i></a>
+                {{ m.title }} <i class="fa fa-dropbox"></i></a>
             {% elif m.title == 'Добавить фото товара' %}
             <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-picture-o" aria-hidden="true"></i></a>
+                {{ m.title }} <i class="fa fa-picture-o"></i></a>
             {% else %}
             <a class="nav-link" aria-current="page" href="{% url m.url_name %}">{{ m.title }}</a>
             {% endif %}
@@ -98,7 +97,7 @@
                     {% for category in categories %}
                     {% if category_selected == category.id %}
                     <a class="sidebar-link-active" href="{{ category.get_absolute_url }}">{{category.title }}
-                        <span class="fa fa-sticky-note ml-4"></span></a>
+                        <span class="fa fa-sticky-note"></span></a>
                     {% else %}
                     <a class="sidebar-link" href="{{ category.get_absolute_url }}">{{ category.title }}
                         <span class="fa fa-sticky-note"></span></a>

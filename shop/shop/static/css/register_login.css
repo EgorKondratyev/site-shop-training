@@ -65,4 +65,29 @@ li {
     background-color: white;
 }
 
+.form-home {
+    color: white;
+    background-color: #0d6efd;
+    margin-left: 1em;
+    border: solid 1px white;
+    padding: 0.75em;
+    transition: 1s;
+}
+
+.form-home:hover {
+    color: #0d6efd;
+    background-color: white;
+    border-radius: 15px;
+    font-size: 1.1em;
+}
+
+.fa-arrow-left {
+    font-size: 1.25em;
+    margin-top: 0.3em;
+}
+.fa-home {
+    font-size: 1.5em;
+    margin-left: 0.25em;
+}
+
 /* End From */

@@ -9,6 +9,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     {% block link %}<link rel="stylesheet" href="{% static 'css/register_login.css' %}">{% endblock %}
 
 </head>
@@ -30,8 +31,9 @@
                 </div>  
                 <div>{{ f.errors }}</div>
                 {% endfor %}
-        
+                
                 <button type="submit">Зарегистрироваться</button>
+                <a class="form-home" href="/"><i class="fa fa-arrow-left"> </i><i class="fa fa-home"></i></a>
             </form>
         </div>
         
