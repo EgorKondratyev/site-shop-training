@@ -1,6 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html>
+
 <head>
 
     <title>{{ title }}</title>
@@ -8,35 +9,38 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    {% block link %}<link rel="stylesheet" href="{% static 'css/register_login.css' %}">{% endblock %}
+    {% block link %}
+    <link rel="stylesheet" href="{% static 'css/register_login.css' %}">{% endblock %}
 
 </head>
+
 <body>
     <div class="form-container">
 
         <div class="title-container">
             <h1>{{ title }}</h1>
-        </div>    
-        
+        </div>
+
         <div class="content-container">
             <form method="post">
                 {% csrf_token %}
                 <p>{{ form.non_field_errors }}</p>
-        
+
                 {% for f in form %}
                 <div class="label-container">
                     <label for="{{ f.id_for_label }}">{{ f.label }}</label>{{ f }}
-                </div>  
+                </div>
                 <div>{{ f.errors }}</div>
                 {% endfor %}
-                
-                <button type="submit">Зарегистрироваться</button>
-                <a class="form-home" href="/"><i class="fa fa-arrow-left"> </i><i class="fa fa-home"></i></a>
+
+                <button type="submit">Зарегистрироваться</button> &nbsp; или
+                <a class="form-home" href="/"><i class="fa fa-arrow-left"></i><i class="fa fa-home"></i></a>
             </form>
         </div>
-        
+
     </div>
 </body>
+
 </html>

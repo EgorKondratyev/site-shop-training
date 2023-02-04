@@ -24,7 +24,7 @@
         </div>
 
         <div class="content-container">
-            <form method="post">
+            <form method="post" enctype="multipart/form-data">
                 {% csrf_token %}
 
                 {% for f in form %}
@@ -34,7 +34,7 @@
                 <div>{{ f.errors }}</div>
                 {% endfor %}
 
-                <button type="submit">Добавить фотографию</button> &nbsp; or 
+                <button type="submit">Добавить фотографию</button> &nbsp; или
                 <a class="form-home" href="/"><i class="fa fa-arrow-left"> </i><i class="fa fa-home"></i></a>
             </form>
         </div>
