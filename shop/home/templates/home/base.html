@@ -17,7 +17,8 @@
 
     <!-- Link -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
-    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    
+    {% block link %}<link rel="stylesheet" href="{% static 'css/style.css' %}">{% endblock %}
     <!-- End Link -->
 
 </head>
@@ -113,12 +114,12 @@
                     {% if category_selected == 'cart' %}
                     <a class="sidebar-link-active" href="{{ cart.get_absolute_url }}">Корзина
                         <span class="fa fa-shopping-cart"></span></a>
-                    <a class="sidebar-link" href="{{ cart.get_absolute_url }}">Магазин <span
+                    <a class="sidebar-link" href="/">Магазин <span
                             class="fa fa-shopping-basket"></span></a>
                     {% else %}
                     <a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина <span
                             class="fa fa-shopping-cart"></span></a>
-                    <a class="sidebar-link" href="{{ cart.get_absolute_url }}">Магазин <span
+                    <a class="sidebar-link" href="/">Магазин <span
                             class="fa fa-shopping-basket"></span></a>
                     {% endif %}
                     {% endif %}
