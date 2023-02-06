@@ -1,20 +1,31 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-    <h1>{{ product.name }}</h1>
-    <h6>Price: {{ product.price }} RUB</h6>
+<div class="content-container">
+    <div class="card-container">
+        <div class="post-body">
+            
+            <div class="card-body">
+                <h4 class="card-title">{{ product.name }}</h4>
+                <h6>Price: {{ product.price }} RUB</h6>
 
-    {% if product.photo %}
-        <p><img class="img-article-left" src="{{ product.photo.photo.url }}"></p>
-    {% endif %}
+                <p class="card-text">
+                    {{ product.description | linebreaks }}
+                </p>
 
-    {{ product.description | linebreaks }}
+                {% if not check_product_in_cart_user %}
+                <p class="link-read-post"><a href="{{ product.get_absolute_url_for_add_cart }}">Добавить в корзину</a>
+                </p>
+                {% elif check_product_in_cart_user == 2 %}
+                <!-- Если пользователь не зарегистрирован, то ничего не выводим -->
+                {% else %}
+                <p class="link-read-post"><a href="{{ product.get_absolute_url_for_remove_cart }}">Убрать из корзины</a>
+                </p>
+                {% endif %}
 
-    {% if not check_product_in_cart_user %}
-        <p class="link-read-post"><a href="{{ product.get_absolute_url_for_add_cart }}">Добавить в корзину</a></p>
-    {% elif check_product_in_cart_user == 2 %}
-<!--        Если пользователь не зарегистрирован, то ничего не выводим-->
-    {% else %}
-        <p class="link-read-post"><a href="{{ product.get_absolute_url_for_remove_cart }}">Убрать из корзины</a></p>
-    {% endif %}
+            </div>
+
+        </div>
+    </div>
+</div>
 {% endblock %}
