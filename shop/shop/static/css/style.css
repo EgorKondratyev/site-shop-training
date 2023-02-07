@@ -207,12 +207,6 @@ h6 {
 	transition: 1s;
 }
 
-.post-body {
-	display: grid;
-	grid-column: 1/13;
-	line-height: 1.5em;
-}
-
 .card:hover {
 	background-color: #bcd7ff;
 	border-radius: 45px;
@@ -262,6 +256,56 @@ h6 {
 }
 
 /* End Card */
+
+/* Post */
+.post-body {
+	display: grid;
+	grid-column: 1/13;
+	line-height: 1.5em;
+	padding: 2em;
+}
+
+.post-title {
+	text-align: center;
+	padding: 1em 1em 0 1em;
+	font-weight: 600;
+	font-size: 2em;
+}
+
+.price {
+	font-weight: 500;
+	font-size: 0.75em;
+	padding-top: 1em;
+}
+
+.post-text {
+	padding: 1.5em;
+	line-height: 2em;
+	text-indent: 2em;
+}
+
+.post-text p {
+	padding-top: 1.5em;
+}
+
+.add-to-cart-container {
+	margin-bottom: 2em;
+	text-align: center;
+}
+
+.add-to-cart {
+	background-color: #0d6efd;
+	color: white;
+	text-decoration: none;
+	padding: 0.5em;
+	transition: 1s;
+}
+
+.add-to-cart:hover {
+	border-radius: 45px;
+}
+
+/* End Post */
 
 
 /* Pagination */
