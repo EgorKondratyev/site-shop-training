@@ -32,46 +32,50 @@
     </div> -->
     <!-- End Preloader -->
 
+    <div class="main-header-container">
+        <div class="main-header-grid">
+            <div class="main-header">
 
-    <!-- Header -->
-    <div class="main-header">
-
-        <div class="header">
-
-            <a class="logo" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
-
-            {% for m in menu %}
-            {% if m.title == 'Домашняя страница' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-home"></i></a>
-            {% elif m.title == 'О сайте' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-search"></i></a>
-            {% elif m.title == 'Добавить товар' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-dropbox"></i></a>
-            {% elif m.title == 'Добавить фото товара' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-picture-o"></i></a>
-            {% else %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">{{ m.title }}</a>
-            {% endif %}
-            {% endfor %}
+                <div class="header">
+        
+                    <a class="logo" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+        
+                    {% for m in menu %}
+                    {% if m.title == 'Домашняя страница' %}
+                    <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                        {{ m.title }} <i class="fa fa-home"></i></a>
+                    {% elif m.title == 'О сайте' %}
+                    <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                        {{ m.title }} <i class="fa fa-search"></i></a>
+                    {% elif m.title == 'Добавить товар' %}
+                    <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                        {{ m.title }} <i class="fa fa-dropbox"></i></a>
+                    {% elif m.title == 'Добавить фото товара' %}
+                    <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                        {{ m.title }} <i class="fa fa-picture-o"></i></a>
+                    {% else %}
+                    <a class="nav-link" aria-current="page" href="{% url m.url_name %}">{{ m.title }}</a>
+                    {% endif %}
+                    {% endfor %}
+                </div>
+        
+                <div class="header">
+        
+                    {% if not request.user.is_authenticated %}
+                    <a class="nav-link" aria-current="page" href="{% url 'login' %}">Войти</a>
+                    <a class="nav-link" aria-current="page" href="{% url 'auth' %}">Зарегистрироваться</a>
+                    {% else %}
+                    <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Привет {{ request.user.username }} |
+                        Выйти</a>
+                    {% endif %}
+        
+                </div>
+        
+            </div>
         </div>
-
-        <div class="header">
-
-            {% if not request.user.is_authenticated %}
-            <a class="nav-link" aria-current="page" href="{% url 'login' %}">Войти</a>
-            <a class="nav-link" aria-current="page" href="{% url 'auth' %}">Зарегистрироваться</a>
-            {% else %}
-            <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Привет {{ request.user.username }} |
-                Выйти</a>
-            {% endif %}
-
-        </div>
-
     </div>
+    <!-- Header -->
+    
     <!-- End Header -->
 
 
