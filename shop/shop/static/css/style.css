@@ -6,6 +6,7 @@
 	margin: 0;
 	border: 0;
 	font-family: 'Poppins', sans-serif;
+	font-size: 16px;
 }
 
 *,
@@ -93,47 +94,37 @@ h6 {
 
 /*--------------------*/
 
-body {
-}
+body {}
 
 /* Header */
-.main-header-container {
-	display: grid;
-	grid-template-columns: repeat(24, 1fr);
-	position: sticky;
-	top: 0;
-}
-
-.main-header-grid {
-	grid-column: 2/24;
-}
 
 .main-header {
+	padding: 0 4em;
 	display: flex;
 	justify-content: space-between;
-	background: linear-gradient(90deg, #0d6efd 0%, #0000FD 100%);
-	
+	border-bottom: solid 2px #F6F4F5;
 }
 
 .header {
+	margin-bottom: 0.5em;
 	display: flex;
 }
 
 .logo {
-	padding: 0.5em;
+	padding: 1em 1em 0 0;
 }
 
 .nav-link {
 	padding: 1em;
-	font-size: 1.25em;
-	color: white;
-	text-decoration: none;
+	margin: 1em 1em 0 0;
+	color: #64829B;
 	transition: 0.75s;
 }
 
 .nav-link:hover {
-	background-color: #0d6efd;
-	border-radius: 45px;
+	color: #F6F4F5;
+	background-color: #C5BAA9;
+	border-radius: 1em;
 }
 
 /* End Header */
@@ -158,44 +149,44 @@ body {
 
 /* Sidebar */
 .sidebar-container {
-	background: linear-gradient(90deg, #0d6efd 0%, #0000ff 100%);
-	color: white;
+	color: #64829B;
+	padding: 1.5em 1.5em 0 0;
 	font-size: 1.25em;
-	border-radius: 0px 0px 15px 0px;
+	border-right: solid 2px #F6F4F5;
 }
 
-.sidebar-title {
-	padding: 0.5em;
+.sidebar-nav-panel {
+	padding: 1em 0;
 	text-align: center;
+	font-size: 1.5em;
+	border-bottom: solid 2px #F6F4F5;
 }
 
 .sidebar-block {
-	padding: 0.5em 0 0.5em 0;
+	padding: 1em 0;
 	text-align: center;
+	font-size: 1.25em;
+	border-bottom: solid 2px #F6F4F5;
 }
 
 .sidebar-link {
 	display: block;
-	padding: 0.75em;
-	padding-left: 2em;
-	color: white;
-	text-decoration: none;
-	transition: 1s;
+	padding: 1em;
+	color: #64829B;
+	transition: 0.75s;
 }
 
 .sidebar-link-active {
 	display: block;
-	padding: 0.75em;
-	padding-left: 2em;
-	color: white;
-	text-decoration: none;
-	background-color: #0d6efd;
-	border-radius: 45px;
+	padding: 1em;
+	color: #A0C4DC;
+	transition: 0.75s;
 }
 
 .sidebar-link:hover {
-	background-color: #0d6efd;
-	border-radius: 45px;
+	color: #F6F4F5;
+	background-color: #C5BAA9;
+	border-radius: 1em;
 }
 
 /* End Sidebar */
@@ -424,6 +415,7 @@ body {
 	display: grid;
 	grid-column: 1/13;
 }
+
 .total-price-block {
 	text-align: center;
 	padding: 2em;
