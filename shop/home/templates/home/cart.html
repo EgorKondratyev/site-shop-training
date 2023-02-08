@@ -1,21 +1,37 @@
 {% extends 'home/base.html' %}
 
 {% block content %}
-<ul class="list-articles">
-    {% for product in products %}
-        <li>
-            <h2>{{ product.name }}</h2>
+<div class="content-container">
+    <div class="card-container">
+        {% for product in products %}
+        <div class="card">
 
             {% if product.photo %}
-                <p><img class="img-article-left thumb" src="{{ product.photo.photo.url }}"></p>
+            <div class="card-img-container">
+                <img class="card-img" src="{{ product.photo.photo.url }}" alt="card-img">
+            </div>
             {% endif %}
 
-            {{ product.description| linebreaks | truncatewords:50 }}
-            <div class="clear"></div>
-            <p class="link-read-post"><a href="{{ product.get_absolute_url }}">Читать пост</a></p>
-        </li>
-    {% empty %}
-    {% endfor %}
-</ul>
-<h1>Общая стоимость товаров в корзине: {{ price.sum }} RUB</h1>
+            <div class="card-body">
+                <h4 class="card-title">{{ product.name }}</h4>
+                <p class="card-text">
+                    {{ product.description|truncatewords_html:50|safe }}
+                </p>
+                <div class="read-more-container">
+                    <a class="read-more" href="{{ product.get_absolute_url }}">Читать весь Пост</a>
+                    <a class="add-to-cart" href="{{ product.get_absolute_url_for_remove_cart }}">Убрать из корзины</a>
+                </div>
+            </div>
+
+        </div>
+        {% empty %}
+        {% endfor %}
+    </div>
+    <div class="total-price-container">
+        <div class="total-price-block">
+            <span class="fa fa-shopping-basket"></span>
+            Общая стоимость товаров в корзине: {{ price.sum }} RUB
+        </div>
+    </div>
+</div>
 {% endblock %}

@@ -93,6 +93,7 @@ h6 {
 
 /*--------------------*/
 
+body {}
 
 /* Header */
 .main-header {
@@ -239,16 +240,18 @@ h6 {
 }
 
 .read-more-container {
-	margin-bottom: 2em;
-	text-align: center;
+	margin: 2em;
+	display: flex;
+	justify-content: space-between;
 }
 
 .read-more {
 	background-color: #0d6efd;
 	color: white;
 	text-decoration: none;
-	padding: 0.5em;
-	transition: 1.5s;
+	padding: 1em;
+	transition: 1s;
+	margin: 0.5em;
 }
 
 .read-more:hover {
@@ -297,8 +300,9 @@ h6 {
 	background-color: #0d6efd;
 	color: white;
 	text-decoration: none;
-	padding: 0.5em;
+	padding: 1em;
 	transition: 1s;
+	margin: 0.5em;
 }
 
 .add-to-cart:hover {
@@ -407,6 +411,20 @@ h6 {
 }
 
 /* End Footer */
+
+/* Cart */
+.total-price-container {
+	display: grid;
+	grid-column: 1/13;
+}
+.total-price-block {
+	text-align: center;
+	padding: 2em;
+	font-size: 1.5em;
+	color: #0d6efd;
+}
+
+/* End Cart */
 
 @media (max-width: 1200px) {
 	.nav-link {
