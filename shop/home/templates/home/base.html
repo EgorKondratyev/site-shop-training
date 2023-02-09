@@ -32,6 +32,9 @@
     </div> -->
     <!-- End Preloader -->
 
+    
+
+    <!-- Header -->
     <div class="main-header">
 
         <div class="header">
@@ -70,13 +73,10 @@
         </div>
 
     </div>
-
-    <!-- Header -->
-
     <!-- End Header -->
 
 
-    <!-- Content -->
+    <!-- Container -->
     <div class="content-container">
 
         <!-- Left Sidebar -->
@@ -128,12 +128,21 @@
         <!-- End Left Sidebar -->
 
 
-        <!-- Product Block -->
-        {% block content %}{% endblock %}
-        <!-- End Product Block -->
+        <!-- Slider -->
+        <div class="slider-container" style="padding: 2em;">
+            <img style="width: 100%;" src="{% static 'images/cat_1.jpg' %}" alt="slider">
+        </div>
+        <!-- End Slider -->
 
     </div>
-    <!-- End Content -->
+    <!-- End Container -->
+
+
+    <!-- Product Block -->
+    <div class="content-container">
+        {% block content %}{% endblock %}
+    </div>
+    <!-- End Product Block -->
 
 
     <!-- Pagination -->
