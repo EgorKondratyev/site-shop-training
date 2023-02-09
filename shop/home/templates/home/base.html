@@ -139,48 +139,111 @@
 
     <!-- Product Block -->
     <div class="content-container">
+        <div class="title-container">
+            <div class="content-title">
+                Предлагаемые товары
+            </div>
+        </div>
         {% block content %}{% endblock %}
     </div>
     <!-- End Product Block -->
 
     <!-- Special Product Block -->
     <div class="content-container">
-        <div id="0" class="card-container">
-            {% for product in products %}
+        <div class="title-container">
+            <div class="content-title">
+                Специальные предложения
+            </div>
+        </div>
+        <div class="special-card-container">
+
             <div class="card">
-        
-                <div class="card-title">{{ product.name }}</div>
-        
-                {% if product.photo %}
+
+                <div class="card-title">The name</div>
+
                 <div class="card-img-container">
-                    <!-- <img class="card-img" src="{{ product.photo.photo.url }}" alt="card-img"> -->
                     <img class="card-img" src="{% static 'images/cat_2.jpg' %}" alt="card-img">
                 </div>
-                {% endif %}
-        
+
                 <div class="card-body">
                     <p class="card-text">
-                        {{ product.description|truncatewords_html:30|safe }}
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure commodi. Dolore quasi velit
+                        esse eligendi, in commodi, iusto non ipsam mollitia ratione asperiores qui a, ipsa quaerat
+                        laudantium hic!
                     </p>
                     <div class="description-container">
-                        <a class="description" href="{{ product.get_absolute_url }}">
-                            <i class="fa fa-sliders"></i>
-                            Посмотреть Описание
+                        <a class="description" href="/">
+                            <i class="fa fa-sliders"></i>Посмотреть Описание
                         </a>
                     </div>
-                    
-                    <div class="read-more-container">
-                        <a class="add-to-cart" href="{{ product.get_absolute_url_for_add_cart }}">
-                            Добавить в корзину
-                            <i class="fa fa-shopping-cart"></i>
-                        </a>
+                    <div class="discount">-37%</div>
+                    <div class="special-price-container">
+                        <div class="price-container old">
+                            3199
+                            <div class="price-description">
+                                <div class="price old">руб.</div>
+                                <div class="amount">шт.</div>
+                            </div>
+                        </div>
+                        <div class="price-container">
+                            1999
+                            <div class="price-description">
+                                <div class="price">руб.</div>
+                                <div class="amount">шт.</div>
+                            </div>
+                        </div>
                     </div>
-        
+                    <a class="add-to-cart" href="/">
+                        Добавить в корзину
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
                 </div>
-        
             </div>
-            {% empty %}
-            {% endfor %}
+
+            <div class="card">
+
+                <div class="card-title">The Name</div>
+
+                <div class="card-img-container">
+                    <img class="card-img" src="{% static 'images/cat_2.jpg' %}" alt="card-img">
+                </div>
+
+                <div class="card-body">
+                    <p class="card-text">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure commodi. Dolore quasi velit
+                        esse eligendi, in commodi, iusto non ipsam mollitia ratione asperiores qui a, ipsa quaerat
+                        laudantium hic!
+                    </p>
+                    <div class="description-container">
+                        <a class="description" href="/">
+                            <i class="fa fa-sliders"></i>Посмотреть Описание
+                        </a>
+                    </div>
+                    <div class="discount">-53%</div>
+                    <div class="special-price-container">
+                        <div class="price-container old">
+                            4199
+                            <div class="price-description">
+                                <div class="price old">руб.</div>
+                                <div class="amount">шт.</div>
+                            </div>
+                        </div>
+                        <div class="price-container">
+                            2299
+                            <div class="price-description">
+                                <div class="price">руб.</div>
+                                <div class="amount">шт.</div>
+                            </div>
+                        </div>
+                    </div>
+                    <a class="add-to-cart" href="/">
+                        Добавить в корзину
+                        <i class="fa fa-shopping-cart"></i>
+                    </a>
+                </div>
+
+            </div>
+
         </div>
     </div>
     <!-- End Special Product Block -->

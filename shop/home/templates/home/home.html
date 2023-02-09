@@ -18,9 +18,11 @@
         {% endif %}
 
         <div class="card-body">
+
             <p class="card-text">
                 {{ product.description|truncatewords_html:30|safe }}
             </p>
+
             <div class="description-container">
                 <a class="description" href="{{ product.get_absolute_url }}">
                     <i class="fa fa-sliders"></i>Посмотреть Описание
@@ -34,8 +36,8 @@
                     <div class="amount">шт.</div>
                 </div>
             </div>
-            
-            
+
+
             <a class="add-to-cart" href="{{ product.get_absolute_url_for_add_cart }}">
                 Добавить в корзину
                 <i class="fa fa-shopping-cart"></i>
