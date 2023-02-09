@@ -94,6 +94,10 @@ h6 {
 
 /*--------------------*/
 
+html {
+	scroll-behavior: smooth;
+}
+
 body {
 	background: url(../images/background.jpg);
 }
@@ -112,8 +116,8 @@ i {
 }
 
 .header {
-	margin-bottom: 0.5em;
 	display: flex;
+	margin-bottom: 0.5em;
 }
 
 .logo {
@@ -258,6 +262,33 @@ i {
 	border-bottom: solid 1px #A68972;
 }
 
+.price-container {
+	display: block;
+	margin: 1.5em 1em 0 0;
+	font-size: 2.5em;
+	font-weight: 500;
+	text-align: right;
+}
+
+.price-description {
+	display: flex;
+	float: right;
+	padding-left: 0.25em;
+	flex-direction: column;
+}
+
+.price {
+	display: inline;
+	padding-bottom: 0.25em;
+	text-align: center;
+	border-bottom: solid 2px #212121;
+}
+
+.amount {
+	display: inline;
+	text-align: center;
+}
+
 .add-to-cart {
 	display: block;
 	background-color: #A68972;
@@ -293,7 +324,7 @@ i {
 	font-size: 2em;
 }
 
-.price {
+.post-price {
 	font-weight: 500;
 	font-size: 0.75em;
 	padding-top: 1em;

@@ -32,7 +32,6 @@
     </div> -->
     <!-- End Preloader -->
 
-    
 
     <!-- Header -->
     <div class="main-header">
@@ -144,6 +143,48 @@
     </div>
     <!-- End Product Block -->
 
+    <!-- Special Product Block -->
+    <div class="content-container">
+        <div id="0" class="card-container">
+            {% for product in products %}
+            <div class="card">
+        
+                <div class="card-title">{{ product.name }}</div>
+        
+                {% if product.photo %}
+                <div class="card-img-container">
+                    <!-- <img class="card-img" src="{{ product.photo.photo.url }}" alt="card-img"> -->
+                    <img class="card-img" src="{% static 'images/cat_2.jpg' %}" alt="card-img">
+                </div>
+                {% endif %}
+        
+                <div class="card-body">
+                    <p class="card-text">
+                        {{ product.description|truncatewords_html:30|safe }}
+                    </p>
+                    <div class="description-container">
+                        <a class="description" href="{{ product.get_absolute_url }}">
+                            <i class="fa fa-sliders"></i>
+                            Посмотреть Описание
+                        </a>
+                    </div>
+                    
+                    <div class="read-more-container">
+                        <a class="add-to-cart" href="{{ product.get_absolute_url_for_add_cart }}">
+                            Добавить в корзину
+                            <i class="fa fa-shopping-cart"></i>
+                        </a>
+                    </div>
+        
+                </div>
+        
+            </div>
+            {% empty %}
+            {% endfor %}
+        </div>
+    </div>
+    <!-- End Special Product Block -->
+
 
     <!-- Pagination -->
     <div class="main-pagination">
@@ -153,7 +194,7 @@
 
 
     <!-- Footer -->
-    <footer>
+    <footer id="footer">
         <div class="main-footer-container">
             <div class="footer-container">
                 <div class="footer-block">

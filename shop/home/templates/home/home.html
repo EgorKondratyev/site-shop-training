@@ -4,7 +4,7 @@
 
 {% block content %}
 
-<div class="card-container">
+<div id="0" class="card-container">
     {% for product in products %}
     <div class="card">
 
@@ -23,17 +23,23 @@
             </p>
             <div class="description-container">
                 <a class="description" href="{{ product.get_absolute_url }}">
-                    <i class="fa fa-sliders"></i>
-                    Посмотреть Описание
+                    <i class="fa fa-sliders"></i>Посмотреть Описание
                 </a>
+            </div>
+
+            <div class="price-container">
+                {{ product.price }}
+                <div class="price-description">
+                    <div class="price">руб.</div>
+                    <div class="amount">шт.</div>
+                </div>
             </div>
             
-            <div class="read-more-container">
-                <a class="add-to-cart" href="{{ product.get_absolute_url_for_add_cart }}">
-                    Добавить в корзину
-                    <i class="fa fa-shopping-cart"></i>
-                </a>
-            </div>
+            
+            <a class="add-to-cart" href="{{ product.get_absolute_url_for_add_cart }}">
+                Добавить в корзину
+                <i class="fa fa-shopping-cart"></i>
+            </a>
 
         </div>
 
