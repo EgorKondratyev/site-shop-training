@@ -443,11 +443,28 @@ body {
 }
 
 .deliviry-from-country {
+	display: flex;
 	height: 100%;
 	margin: 0 0 1.5em 1.5em;
 	padding: 2em;
 	border: solid 1px #C1BBB0;
 	border-radius: 1em;
+}
+
+.deliviry-img {
+	width: 20%;
+	text-align: center;
+	font-size: 5em;
+}
+
+.deliviry-description {
+	width: 70%;
+}
+
+.deliviry-arrow {
+	width: 10%;
+	text-align: center;
+	font-size: 2em;
 }
 
 .deliviry-special {
