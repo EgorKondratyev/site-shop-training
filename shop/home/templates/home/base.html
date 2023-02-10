@@ -42,19 +42,30 @@
 
             {% for m in menu %}
             {% if m.title == 'Домашняя страница' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-home"></i></a>
+
+            <div class="nav-link-block">
+                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                    {{ m.title }} <i class="fa fa-home"></i></a>
+            </div>
+
             {% elif m.title == 'О сайте' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-search"></i></a>
+            <div class="nav-link-block">
+                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                    {{ m.title }} <i class="fa fa-search"></i></a>
+            </div>
             {% elif m.title == 'Добавить товар' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-dropbox"></i></a>
+            <div class="nav-link-block">
+                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                    {{ m.title }} <i class="fa fa-dropbox"></i></a>
+            </div>
             {% elif m.title == 'Добавить фото товара' %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                {{ m.title }} <i class="fa fa-picture-o"></i></a>
+            <div class="nav-link-block">
+                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                    {{ m.title }} <i class="fa fa-picture-o"></i></a>
+            </div>
             {% else %}
-            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">{{ m.title }}</a>
+            <div class="nav-link-block"><a class="nav-link" aria-current="page" href="{% url m.url_name %}">{{ m.title
+                    }}</a></div>
             {% endif %}
             {% endfor %}
         </div>
@@ -62,11 +73,17 @@
         <div class="header">
 
             {% if not request.user.is_authenticated %}
-            <a class="nav-link" aria-current="page" href="{% url 'login' %}">Войти</a>
-            <a class="nav-link" aria-current="page" href="{% url 'auth' %}">Зарегистрироваться</a>
+            <div class="nav-link-block">
+                <a class="nav-link" aria-current="page" href="{% url 'login' %}">Войти</a>
+            </div>
+            <div class="nav-link-block">
+                <a class="nav-link" aria-current="page" href="{% url 'auth' %}">Зарегистрироваться</a>
+            </div>
             {% else %}
-            <a class="nav-link" aria-current="page" href="{% url 'logout' %}">Привет {{ request.user.username }} |
-                Выйти</a>
+            <div class="nav-link-block">
+                <a class="nav-link" aria-current="page" href="{% url 'logout' %}">
+                    Привет {{ request.user.username }} | Выйти</a>
+            </div>
             {% endif %}
 
         </div>
@@ -81,7 +98,7 @@
         <!-- Left Sidebar -->
         <div class="sidebar-container">
             <ul>
-                <div class="sidebar-nav-panel">Навигационная Панель</div>
+                <div class="sidebar-title">Навигационная Панель</div>
 
                 {% if category_selected == 0 %}
                 <a class="sidebar-link-active" href="{% url 'home' %}">Дом <span class="fa fa-home"></span></a>
@@ -153,12 +170,12 @@
         <div class="title-container">
             <div class="content-title">
                 Специальные предложения
+                <i class="fa fa-star"></i>
             </div>
         </div>
         <div class="special-card-container">
 
             <div class="card">
-
                 <div class="card-title">The name</div>
 
                 <div class="card-img-container">
@@ -201,7 +218,6 @@
             </div>
 
             <div class="card">
-
                 <div class="card-title">The Name</div>
 
                 <div class="card-img-container">
@@ -241,12 +257,59 @@
                         <i class="fa fa-shopping-cart"></i>
                     </a>
                 </div>
-
             </div>
 
         </div>
     </div>
     <!-- End Special Product Block -->
+
+
+    <!-- Deliviry Block -->
+    <div class="content-container">
+        <div class="title-container">
+            <div class="content-title">
+                Абонементы на Доставку
+            </div>
+        </div>
+        <div class="deliviry-container">
+
+            <div class="deliviry-address">
+                <div class="deliviry-address-title">
+                    Оформление доставки
+                </div>
+
+                <input type="text" class="deliviry-address-input" placeholder="Введите адрес">
+                <div class="deliviry-address-description">
+                    Адрес доставки указывается полность (квартира и корпус)
+                </div>
+
+                <input type="number" class="deliviry-card-input" placeholder="Введите номер вашего абонемента">
+                <div class="deliviry-card-description">
+                    Номер абонемента можно узнать в личном кабинете
+                </div>
+
+                <a class="make-order" href="/">
+                    Сделать заказ
+                    <i class="fa fa-check-square-o"></i>
+                </a>
+                
+            </div>
+
+            <div class="deliviry-another-option">
+                <div class="deliviry-from-country">
+                    deliviry-from-country
+                </div>
+                <div class="deliviry-special">
+                    deliviry-special
+                </div>
+            </div>
+
+        </div>
+        <div class="delivery-card-container">
+
+        </div>
+    </div>
+    <!-- End Deliviry Block -->
 
 
     <!-- Pagination -->
