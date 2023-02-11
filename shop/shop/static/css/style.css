@@ -481,6 +481,26 @@ body {
 	grid-template-columns: repeat(6, 1fr);
 }
 
+.delivery-card {
+	background-color: #C1BBB0;
+	padding: 1em;
+	margin: 1.5em 1.5em 0 1.5em;
+	border-radius: 1em 1em 0 0;
+	transition: 0.5s;
+}
+
+.delivery-card-description {
+	visibility: hidden;
+}
+
+.delivery-card:hover {
+	margin-top: 0.5em;
+}
+
+.delivery-card:hover .delivery-card-description{
+	visibility: visible;
+}
+
 /* End Delivery Card */
 
 
