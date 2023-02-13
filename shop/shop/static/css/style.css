@@ -406,6 +406,10 @@ body {
 	border-radius: 1em;
 }
 
+.deliviry-address:hover {
+	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+}
+
 .deliviry-address-title {
 	margin: 1em 0;
 	font-size: 1.5em;
@@ -475,24 +479,42 @@ body {
 	border-radius: 1em;
 }
 
+.deliviry-from-country:hover {
+	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
+}
+
 .deliviry-img {
+	color: #212121;
 	width: 20%;
 	margin: auto;
 	text-align: center;
+	font-size: 5em;
 	transform: rotate(-45deg);
+	transition: 0.5s;
 }
 
 .deliviry-description {
-	width: 70%;
+	width: 60%;
 	margin: auto;
 	padding: 0 0.5em;
 }
 
 .deliviry-arrow {
-	width: 10%;
+	color: #212121;
+	width: 20%;
 	margin: auto;
 	text-align: center;
 	font-size: 3em;
+	transition: 0.5s;
+}
+
+.deliviry-from-country:hover .deliviry-img {
+	color: #A68972;
+}
+
+.deliviry-from-country:hover .deliviry-arrow {
+	color: #A68972;
+	text-align: right;
 }
 
 .deliviry-special {
@@ -501,6 +523,10 @@ body {
 	padding: 2em;
 	border: solid 1px #C1BBB0;
 	border-radius: 1em;
+}
+
+.deliviry-special:hover {
+	box-shadow: 0 0 0.5em rgba(0, 0, 0, 0.2);
 }
 
 .delivery-card-container {
