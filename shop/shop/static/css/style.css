@@ -166,7 +166,7 @@ body {
 
 .title-container {
 	grid-column: 2/24;
-	margin: 4em 0 0 1em;
+	margin: 4em 0 3em 1em;
 }
 
 /* End Header Grid */
@@ -245,7 +245,7 @@ body {
 
 .card {
 	color: #212121;
-	margin: 3em 1em 3em 1em;
+	margin: 0 1em 2em 1em;
 	border: solid 2px #C1BBB0;
 	border-radius: 0.5em;
 	transition: 1s;
@@ -419,7 +419,7 @@ body {
 .deliviry-address-input {
 	margin-top: 2em;
 	width: 100%;
-	height: 2em;
+	height: 3em;
 	padding-left: 0.5em;
 }
 
@@ -434,7 +434,7 @@ body {
 
 .deliviry-card-input {
 	width: 100%;
-	height: 2em;
+	height: 3em;
 	margin-top: 3em;
 	padding-left: 0.5em;
 }
@@ -489,19 +489,25 @@ body {
 	margin: auto;
 	text-align: center;
 	font-size: 5em;
-	transform: rotate(-45deg);
 	transition: 0.5s;
 }
 
 .deliviry-description {
-	width: 60%;
+	width: 70%;
 	margin: auto;
-	padding: 0 0.5em;
+	padding: 0 1em;
+}
+
+.deliviry-description-title {
+	font-size: 1.5em;
+}
+.deliviry-description-text {
+	margin-top: 1em;
 }
 
 .deliviry-arrow {
 	color: #212121;
-	width: 20%;
+	width: 10%;
 	margin: auto;
 	text-align: center;
 	font-size: 3em;
@@ -515,6 +521,8 @@ body {
 .deliviry-from-country:hover .deliviry-arrow {
 	color: #A68972;
 	text-align: right;
+	/* position: relative;
+	left: 1em; */
 }
 
 .deliviry-special {
@@ -531,19 +539,21 @@ body {
 
 .delivery-card-container {
 	display: grid;
-	grid-column: 2/24;
-	grid-template-columns: repeat(6, 1fr);
+	grid-column: 6/20;
+	grid-template-columns: repeat(4, 1fr);
 }
 
 .delivery-card {
 	background-color: #C1BBB0;
 	padding: 1em;
 	margin: 1.5em 1.5em 0 1.5em;
+	text-align: center;
 	border-radius: 1em 1em 0 0;
 	transition: 0.5s;
 }
 
 .delivery-card-description {
+	margin-top: 1em;
 	visibility: hidden;
 }
 
