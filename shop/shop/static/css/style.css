@@ -477,18 +477,22 @@ body {
 
 .deliviry-img {
 	width: 20%;
+	margin: auto;
 	text-align: center;
-	font-size: 5em;
+	transform: rotate(-45deg);
 }
 
 .deliviry-description {
 	width: 70%;
+	margin: auto;
+	padding: 0 0.5em;
 }
 
 .deliviry-arrow {
 	width: 10%;
+	margin: auto;
 	text-align: center;
-	font-size: 2em;
+	font-size: 3em;
 }
 
 .deliviry-special {
