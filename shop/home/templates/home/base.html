@@ -11,7 +11,7 @@
     <!-- Sites Settings -->
     <meta charset="UTF-8">
     <meta name="viewport"
-        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <!-- End Sites Settings -->
 
@@ -26,383 +26,384 @@
 
 <body>
 
-    <!-- Preloader -->
-    <!-- <div id="preloader">
-        <div class="line"></div>
-    </div> -->
-    <!-- End Preloader -->
+<!-- Preloader -->
+<!-- <div id="preloader">
+    <div class="line"></div>
+</div> -->
+<!-- End Preloader -->
 
 
-    <!-- Header -->
-    <div class="main-header">
+<!-- Header -->
+<div class="main-header">
 
-        <div class="header">
+    <div class="header">
 
-            <a class="logo" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
+        <a class="logo" href="{% url 'home' %}"><img src="{% static 'images/logo.png' %}" alt="logo"></a>
 
-            {% for m in menu %}
-            {% if m.title == 'Домашняя страница' %}
+        {% for m in menu %}
+        {% if m.title == 'Домашняя страница' %}
 
-            <div class="nav-link-block">
-                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                    {{ m.title }} <i class="fa fa-home"></i></a>
-            </div>
-
-            {% elif m.title == 'О сайте' %}
-            <div class="nav-link-block">
-                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                    {{ m.title }} <i class="fa fa-search"></i></a>
-            </div>
-            {% elif m.title == 'Добавить товар' %}
-            <div class="nav-link-block">
-                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                    {{ m.title }} <i class="fa fa-dropbox"></i></a>
-            </div>
-            {% elif m.title == 'Добавить фото товара' %}
-            <div class="nav-link-block">
-                <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
-                    {{ m.title }} <i class="fa fa-picture-o"></i></a>
-            </div>
-            {% else %}
-            <div class="nav-link-block"><a class="nav-link" aria-current="page" href="{% url m.url_name %}">{{ m.title
-                    }}</a></div>
-            {% endif %}
-            {% endfor %}
+        <div class="nav-link-block">
+            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                {{ m.title }} <i class="fa fa-home"></i></a>
         </div>
 
-        <div class="header">
-
-            {% if not request.user.is_authenticated %}
-            <div class="nav-link-block">
-                <a class="nav-link" aria-current="page" href="{% url 'login' %}">Войти</a>
-            </div>
-            <div class="nav-link-block">
-                <a class="nav-link" aria-current="page" href="{% url 'auth' %}">Зарегистрироваться</a>
-            </div>
-            {% else %}
-            <div class="nav-link-block">
-                <a class="nav-link" aria-current="page" href="{% url 'logout' %}">
-                    Привет {{ request.user.username }} | Выйти</a>
-            </div>
-            {% endif %}
-
+        {% elif m.title == 'О сайте' %}
+        <div class="nav-link-block">
+            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                {{ m.title }} <i class="fa fa-search"></i></a>
         </div>
+        {% elif m.title == 'Добавить товар' %}
+        <div class="nav-link-block">
+            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                {{ m.title }} <i class="fa fa-dropbox"></i></a>
+        </div>
+        {% elif m.title == 'Добавить фото товара' %}
+        <div class="nav-link-block">
+            <a class="nav-link" aria-current="page" href="{% url m.url_name %}">
+                {{ m.title }} <i class="fa fa-picture-o"></i></a>
+        </div>
+        {% else %}
+        <div class="nav-link-block"><a class="nav-link" aria-current="page" href="{% url m.url_name %}">{{ m.title
+            }}</a></div>
+        {% endif %}
+        {% endfor %}
+    </div>
+
+    <div class="header">
+
+        {% if not request.user.is_authenticated %}
+        <div class="nav-link-block">
+            <a class="nav-link" aria-current="page" href="{% url 'login' %}">Войти</a>
+        </div>
+        <div class="nav-link-block">
+            <a class="nav-link" aria-current="page" href="{% url 'auth' %}">Зарегистрироваться</a>
+        </div>
+        {% else %}
+        <div class="nav-link-block">
+            <a class="nav-link" aria-current="page" href="{% url 'logout' %}">
+                Привет {{ request.user.username }} | Выйти</a>
+        </div>
+        {% endif %}
 
     </div>
-    <!-- End Header -->
+
+</div>
+<!-- End Header -->
 
 
-    <!-- Container -->
-    <div class="content-container">
+<!-- Container -->
+<div class="content-container">
 
-        <!-- Left Sidebar -->
-        <div class="sidebar-container">
-            <ul>
-                <div class="sidebar-title">Навигационная Панель</div>
+    <!-- Left Sidebar -->
+    <div class="sidebar-container">
 
-                {% if category_selected == 0 %}
-                <a class="sidebar-link-active" href="{% url 'home' %}">Дом <span class="fa fa-home"></span></a>
-                {% else %}
-                <a class="sidebar-link" href="{% url 'home' %}">Дом <span class="fa fa-home"></span></a>
-                {% endif %}
+        <div class="sidebar-title">Навигационная Панель</div>
 
-                <a class="sidebar-link" href="{% url 'about' %}">О нас <span class="fa fa-user"></span></a>
+        {% if category_selected == 0 %}
+        <a class="sidebar-link-active" href="{% url 'home' %}">Дом <span class="fa fa-home"></span></a>
+        {% else %}
+        <a class="sidebar-link" href="{% url 'home' %}">Дом <span class="fa fa-home"></span></a>
+        {% endif %}
 
-                <a class="sidebar-link" href="#">Сервисы <span class="fa fa-cogs"></span></a>
-                <a class="sidebar-link" href="#">Контакты <span class="fa fa-paper-plane"></span></a>
+        <a class="sidebar-link" href="{% url 'about' %}">О нас <span class="fa fa-user"></span></a>
 
-                <div class="sidebar-block">Категории <span class="fa fa-suitcase"></span></div>
+        <a class="sidebar-link" href="#">Сервисы <span class="fa fa-cogs"></span></a>
+        <a class="sidebar-link" href="#">Контакты <span class="fa fa-paper-plane"></span></a>
 
-                {% for category in categories %}
-                {% if category_selected == category.id %}
-                <a class="sidebar-link-active" href="{{ category.get_absolute_url }}">{{category.title }}
-                    <span class="fa fa-sticky-note"></span></a>
-                {% else %}
-                <a class="sidebar-link" href="{{ category.get_absolute_url }}">{{ category.title }}
-                    <span class="fa fa-sticky-note"></span></a>
-                {% endif %}
-                {% endfor %}
+        <div class="sidebar-block">Категории <span class="fa fa-suitcase"></span></div>
 
-                <!-- <a href="#"><span class="fa fa-briefcase"></span>Works</a>
-                <a href="#"><span class="fa fa-suitcase"></span>Gallery</a> -->
+        {% for category in categories %}
+        {% if category_selected == category.id %}
+        <a class="sidebar-link-active" href="{{ category.get_absolute_url }}">{{category.title }}
+            <span class="fa fa-sticky-note"></span></a>
+        {% else %}
+        <a class="sidebar-link" href="{{ category.get_absolute_url }}">{{ category.title }}
+            <span class="fa fa-sticky-note"></span></a>
+        {% endif %}
+        {% endfor %}
 
-                <div class="sidebar-block">Покупки <span class="fa fa-truck"></span></div>
+        <!-- <a href="#"><span class="fa fa-briefcase"></span>Works</a>
+        <a href="#"><span class="fa fa-suitcase"></span>Gallery</a> -->
 
-                {% if request.user.is_authenticated %}
-                {% if category_selected == 'cart' %}
-                <a class="sidebar-link-active" href="{{ cart.get_absolute_url }}">Корзина
-                    <span class="fa fa-shopping-cart"></span></a>
-                <a class="sidebar-link" href="/">Магазин <span class="fa fa-shopping-basket"></span></a>
-                {% else %}
-                <a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина <span
-                        class="fa fa-shopping-cart"></span></a>
-                <a class="sidebar-link" href="/">Магазин <span class="fa fa-shopping-basket"></span></a>
-                {% endif %}
-                {% endif %}
-            </ul>
-        </div>
-        <!-- End Left Sidebar -->
+        <div class="sidebar-block">Покупки <span class="fa fa-truck"></span></div>
 
-
-        <!-- Slider -->
-        <div class="slider-container" style="padding: 2em;">
-            <img style="width: 100%;" src="{% static 'images/cat_1.jpg' %}" alt="slider">
-        </div>
-        <!-- End Slider -->
+        {% if request.user.is_authenticated %}
+        {% if category_selected == 'cart' %}
+        <a class="sidebar-link-active" href="{{ cart.get_absolute_url }}">Корзина
+            <span class="fa fa-shopping-cart"></span></a>
+        <a class="sidebar-link" href="/">Магазин <span class="fa fa-shopping-basket"></span></a>
+        {% else %}
+        <a class="sidebar-link" href="{{ cart.get_absolute_url }}">Корзина <span
+                class="fa fa-shopping-cart"></span></a>
+        <a class="sidebar-link" href="/">Магазин <span class="fa fa-shopping-basket"></span></a>
+        {% endif %}
+        {% endif %}
 
     </div>
-    <!-- End Container -->
+    <!-- End Left Sidebar -->
 
 
-    <!-- Product Block -->
-    <div class="content-container">
-        <div class="title-container">
-            <div class="content-title">
-                Предлагаемые товары
-            </div>
-        </div>
-        {% block content %}{% endblock %}
+    <!-- Slider -->
+    <div class="slider-container" style="padding: 2em;">
+        <img style="width: 100%;" src="{% static 'images/cat_1.jpg' %}" alt="slider">
     </div>
-    <!-- End Product Block -->
+    <!-- End Slider -->
 
-    <!-- Special Product Block -->
-    <div class="content-container">
-        <div class="title-container">
-            <div class="content-title">
-                Специальные предложения
-                <i class="fa fa-star"></i>
-            </div>
+</div>
+<!-- End Container -->
+
+
+<!-- Product Block -->
+<div class="content-container">
+    <div class="title-container">
+        <div class="content-title">
+            Предлагаемые товары
         </div>
-        <div class="special-card-container">
+    </div>
+    {% block content %}{% endblock %}
+</div>
+<!-- End Product Block -->
 
-            <div class="card">
-                <div class="card-title">The name</div>
+<!-- Special Product Block -->
+<div class="content-container">
+    <div class="title-container">
+        <div class="content-title">
+            Специальные предложения
+            <i class="fa fa-star"></i>
+        </div>
+    </div>
+    <div class="special-card-container">
 
-                <div class="card-img-container">
-                    <img class="card-img" src="{% static 'images/cat_2.jpg' %}" alt="card-img">
-                </div>
+        <div class="card">
+            <div class="card-title">The name</div>
 
-                <div class="card-body">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure commodi. Dolore quasi velit
-                        esse eligendi, in commodi, iusto non ipsam mollitia ratione asperiores qui a, ipsa quaerat
-                        laudantium hic!
-                    </p>
-                    <div class="description-container">
-                        <a class="description" href="/">
-                            <i class="fa fa-sliders"></i>Посмотреть Описание
-                        </a>
-                    </div>
-                    <div class="discount">-37%</div>
-                    <div class="special-price-container">
-                        <div class="price-container old">
-                            3199
-                            <div class="price-description">
-                                <div class="price old">руб.</div>
-                                <div class="amount">шт.</div>
-                            </div>
-                        </div>
-                        <div class="price-container">
-                            1999
-                            <div class="price-description">
-                                <div class="price">руб.</div>
-                                <div class="amount">шт.</div>
-                            </div>
-                        </div>
-                    </div>
-                    <a class="add-to-cart" href="/">
-                        Добавить в корзину
-                        <i class="fa fa-shopping-cart"></i>
+            <div class="card-img-container">
+                <img class="card-img" src="{% static 'images/cat_2.jpg' %}" alt="card-img">
+            </div>
+
+            <div class="card-body">
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure commodi. Dolore quasi velit
+                    esse eligendi, in commodi, iusto non ipsam mollitia ratione asperiores qui a, ipsa quaerat
+                    laudantium hic!
+                </p>
+                <div class="description-container">
+                    <a class="description" href="/">
+                        <i class="fa fa-sliders"></i>Посмотреть Описание
                     </a>
                 </div>
-            </div>
-
-            <div class="card">
-                <div class="card-title">The Name</div>
-
-                <div class="card-img-container">
-                    <img class="card-img" src="{% static 'images/cat_2.jpg' %}" alt="card-img">
-                </div>
-
-                <div class="card-body">
-                    <p class="card-text">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure commodi. Dolore quasi velit
-                        esse eligendi, in commodi, iusto non ipsam mollitia ratione asperiores qui a, ipsa quaerat
-                        laudantium hic!
-                    </p>
-                    <div class="description-container">
-                        <a class="description" href="/">
-                            <i class="fa fa-sliders"></i>Посмотреть Описание
-                        </a>
-                    </div>
-                    <div class="discount">-53%</div>
-                    <div class="special-price-container">
-                        <div class="price-container old">
-                            4199
-                            <div class="price-description">
-                                <div class="price old">руб.</div>
-                                <div class="amount">шт.</div>
-                            </div>
-                        </div>
-                        <div class="price-container">
-                            2299
-                            <div class="price-description">
-                                <div class="price">руб.</div>
-                                <div class="amount">шт.</div>
-                            </div>
+                <div class="discount">-37%</div>
+                <div class="special-price-container">
+                    <div class="price-container old">
+                        3199
+                        <div class="price-description">
+                            <div class="price old">руб.</div>
+                            <div class="amount">шт.</div>
                         </div>
                     </div>
-                    <a class="add-to-cart" href="/">
-                        Добавить в корзину
-                        <i class="fa fa-shopping-cart"></i>
-                    </a>
+                    <div class="price-container">
+                        1999
+                        <div class="price-description">
+                            <div class="price">руб.</div>
+                            <div class="amount">шт.</div>
+                        </div>
+                    </div>
                 </div>
-            </div>
-
-        </div>
-    </div>
-    <!-- End Special Product Block -->
-
-
-    <!-- Deliviry Block -->
-    <div class="content-container">
-        <div class="title-container">
-            <div class="content-title">
-                Абонементы на Доставку
-            </div>
-        </div>
-        <div class="deliviry-container">
-
-            <div class="deliviry-address">
-                <div class="deliviry-address-title">
-                    Оформление доставки
-                </div>
-
-                <input type="text" class="deliviry-address-input" placeholder="Введите адрес">
-                <div class="deliviry-address-description">
-                    Адрес доставки указывается полность (квартира и корпус)
-                </div>
-
-                <input type="number" class="deliviry-card-input" placeholder="Введите номер вашего абонемента">
-                <div class="deliviry-card-description">
-                    Номер абонемента можно узнать в личном кабинете
-                </div>
-
-                <a class="make-order" href="/">
-                    Сделать заказ
-                    <i class="fa fa-check-square-o"></i>
+                <a class="add-to-cart" href="/">
+                    Добавить в корзину
+                    <i class="fa fa-shopping-cart"></i>
                 </a>
+            </div>
+        </div>
 
+        <div class="card">
+            <div class="card-title">The Name</div>
+
+            <div class="card-img-container">
+                <img class="card-img" src="{% static 'images/cat_2.jpg' %}" alt="card-img">
             </div>
 
-            <div class="deliviry-another-option">
-                <div class="deliviry-from-country">
-                    <div class="deliviry-img"><i class="fa fa-plane"></i></div>
-                    <div class="deliviry-description">
-                        <div class="deliviry-description-title">
-                            Доставка в другие страны
-                        </div>
-                        <div class="deliviry-description-text">
-                            Заграничная доставка осуществляется самолетами международных авиа-линий
+            <div class="card-body">
+                <p class="card-text">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, iure commodi. Dolore quasi velit
+                    esse eligendi, in commodi, iusto non ipsam mollitia ratione asperiores qui a, ipsa quaerat
+                    laudantium hic!
+                </p>
+                <div class="description-container">
+                    <a class="description" href="/">
+                        <i class="fa fa-sliders"></i>Посмотреть Описание
+                    </a>
+                </div>
+                <div class="discount">-53%</div>
+                <div class="special-price-container">
+                    <div class="price-container old">
+                        4199
+                        <div class="price-description">
+                            <div class="price old">руб.</div>
+                            <div class="amount">шт.</div>
                         </div>
                     </div>
-                    <div class="deliviry-arrow">→</div>
-                </div>
-
-                <div class="deliviry-from-country">
-                    <div class="deliviry-img"><i class="fa fa-magic"></i></div>
-                    <div class="deliviry-description">
-                        <div class="deliviry-description-title">
-                            Специальные условия
-                        </div>
-                        <div class="deliviry-description-text">
-                            Если вам недостаточно условий предлагаемых по подписке создайте собственные в нашем конструкторе!
+                    <div class="price-container">
+                        2299
+                        <div class="price-description">
+                            <div class="price">руб.</div>
+                            <div class="amount">шт.</div>
                         </div>
                     </div>
-                    <div class="deliviry-arrow">→</div>
                 </div>
+                <a class="add-to-cart" href="/">
+                    Добавить в корзину
+                    <i class="fa fa-shopping-cart"></i>
+                </a>
+            </div>
+        </div>
 
+    </div>
+</div>
+<!-- End Special Product Block -->
+
+
+<!-- Deliviry Block -->
+<div class="content-container">
+    <div class="title-container">
+        <div class="content-title">
+            Абонементы на Доставку
+        </div>
+    </div>
+    <div class="deliviry-container">
+
+        <div class="deliviry-address">
+            <div class="deliviry-address-title">
+                Оформление доставки
+            </div>
+
+            <input type="text" class="deliviry-address-input" placeholder="Введите адрес">
+            <div class="deliviry-address-description">
+                Адрес доставки указывается полность (квартира и корпус)
+            </div>
+
+            <input type="number" class="deliviry-card-input" placeholder="Введите номер вашего абонемента">
+            <div class="deliviry-card-description">
+                Номер абонемента можно узнать в личном кабинете
+            </div>
+
+            <a class="make-order" href="/">
+                Сделать заказ
+                <i class="fa fa-check-square-o"></i>
+            </a>
+
+        </div>
+
+        <div class="deliviry-another-option">
+            <div class="deliviry-from-country">
+                <div class="deliviry-img"><i class="fa fa-plane"></i></div>
+                <div class="deliviry-description">
+                    <div class="deliviry-description-title">
+                        Доставка в другие страны
+                    </div>
+                    <div class="deliviry-description-text">
+                        Заграничная доставка осуществляется самолетами международных авиа-линий
+                    </div>
+                </div>
+                <div class="deliviry-arrow">→</div>
+            </div>
+
+            <div class="deliviry-from-country">
+                <div class="deliviry-img"><i class="fa fa-magic"></i></div>
+                <div class="deliviry-description">
+                    <div class="deliviry-description-title">
+                        Специальные условия
+                    </div>
+                    <div class="deliviry-description-text">
+                        Если вам недостаточно условий предлагаемых по подписке создайте собственные в нашем
+                        конструкторе!
+                    </div>
+                </div>
+                <div class="deliviry-arrow">→</div>
             </div>
 
         </div>
-        <div class="delivery-card-container">
-            <div class="delivery-card">
-                Lorem ipsum
-                <div class="delivery-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
-                    quibusdam.
-                </div>
+
+    </div>
+    <div class="delivery-card-container">
+        <div class="delivery-card">
+            Lorem ipsum
+            <div class="delivery-card-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
+                quibusdam.
             </div>
-            <div class="delivery-card">
-                Lorem ipsum
-                <div class="delivery-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
-                    quibusdam.
-                </div>
+        </div>
+        <div class="delivery-card">
+            Lorem ipsum
+            <div class="delivery-card-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
+                quibusdam.
             </div>
-            <div class="delivery-card">
-                Lorem ipsum
-                <div class="delivery-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
-                    quibusdam.
-                </div>
+        </div>
+        <div class="delivery-card">
+            Lorem ipsum
+            <div class="delivery-card-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
+                quibusdam.
             </div>
-            <div class="delivery-card">
-                <some>Lorem ipsum</some>
-                <div class="delivery-card-description">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
-                    quibusdam.
-                </div>
+        </div>
+        <div class="delivery-card">
+            <some>Lorem ipsum</some>
+            <div class="delivery-card-description">
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. In, nihil voluptas recusandae cumque quod
+                quibusdam.
             </div>
         </div>
     </div>
-    <!-- End Deliviry Block -->
+</div>
+<!-- End Deliviry Block -->
 
 
-    <!-- Pagination -->
-    <div class="main-pagination">
-        {% include './inc/_pagination.html' %}
-    </div>
-    <!-- End Pagination -->
+<!-- Pagination -->
+<div class="main-pagination">
+    {% include './inc/_pagination.html' %}
+</div>
+<!-- End Pagination -->
 
 
-    <!-- Footer -->
-    <footer id="footer">
-        <div class="main-footer-container">
-            <div class="footer-container">
-                <div class="footer-block">
-                    <h3>Дизайн</h3>
-                    <li class="footer-item"><a class="footer-link" href="/">Ipsum Ammet</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Sit Sit</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Ammet Rust</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Lorem Dollor</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Dollor Sit</a></li>
-                </div>
-                <div class="footer-block">
-                    <h4>Частые Вопросы</h4>
-                    <li class="footer-item"><a class="footer-link" href="/">Lorem Dollor?</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Ipsum Ammet</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Dollor Sit?</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Sit Sit?</a></li>
-                    <li class="footer-item"><a class="footer-link" href="/">Ammet Rust?</a></li>
-                </div>
-                <div class="footer-block">
-                    <h4>Обратная связь</h4>
-                    <li class="footer-item">
-                        <a class="footer-social-link" href="/"><i class="fa fa-paper-plane"></i></a>
-                        <a class="footer-social-link" href="/"><i class="fa fa-facebook"></i></a>
-                        <a class="footer-social-link" href="/"><i class="fa fa-twitter"></i></a>
-                        <a class="footer-social-link" href="/"><i class="fa fa-github"></i></a>
-                    </li>
-                    <li class="footer-item">Some more Text</li>
-                </div>
+<!-- Footer -->
+<footer id="footer">
+    <div class="main-footer-container">
+        <div class="footer-container">
+            <div class="footer-block">
+                <h3>Дизайн</h3>
+                <li class="footer-item"><a class="footer-link" href="/">Ipsum Ammet</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Sit Sit</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Ammet Rust</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Lorem Dollor</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Dollor Sit</a></li>
+            </div>
+            <div class="footer-block">
+                <h4>Частые Вопросы</h4>
+                <li class="footer-item"><a class="footer-link" href="/">Lorem Dollor?</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Ipsum Ammet</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Dollor Sit?</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Sit Sit?</a></li>
+                <li class="footer-item"><a class="footer-link" href="/">Ammet Rust?</a></li>
+            </div>
+            <div class="footer-block">
+                <h4>Обратная связь</h4>
+                <li class="footer-item">
+                    <a class="footer-social-link" href="/"><i class="fa fa-paper-plane"></i></a>
+                    <a class="footer-social-link" href="/"><i class="fa fa-facebook"></i></a>
+                    <a class="footer-social-link" href="/"><i class="fa fa-twitter"></i></a>
+                    <a class="footer-social-link" href="/"><i class="fa fa-github"></i></a>
+                </li>
+                <li class="footer-item">Some more Text</li>
             </div>
         </div>
-    </footer>
-    <!-- End Footer -->
+    </div>
+</footer>
+<!-- End Footer -->
 
 
-    <script src="{% static 'js/preloader.js' %}"></script>
+<script src="{% static 'js/preloader.js' %}"></script>
 </body>
 
 </html>

@@ -366,11 +366,11 @@ body {
 }
 
 .old:before {
+	content: "";
 	position: absolute;
 	border-bottom: solid 3px #C1BBB0;
 	width: 100%;
 	height: 50%;
-	content: "";
 	transform: rotate(-12deg);
 }
 
